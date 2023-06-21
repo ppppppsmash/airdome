@@ -5,6 +5,7 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { CommandLineIcon } from "@heroicons/react/24/outline"
 
 const Logo = ({ src }: { src?: string }) => {
   // destructuring items from config object
@@ -36,23 +37,10 @@ const Logo = ({ src }: { src?: string }) => {
 
   return (
     <Link href="/" className="navbar-brand inline-block">
-      {logoPath ? (
-        <Image
-          width={logo_width.replace("px", "") * 2}
-          height={logo_height.replace("px", "") * 2}
-          src={logoPath}
-          alt={title}
-          priority
-          style={{
-            height: logo_height.replace("px", "") + "px",
-            width: logo_width.replace("px", "") + "px",
-          }}
-        />
-      ) : logo_text ? (
-        logo_text
-      ) : (
-        title
-      )}
+      <p className="flex items-center gap-2">
+        <CommandLineIcon className="w-10 h-10" />
+        Himalaya
+      </p>
     </Link>
   );
 };

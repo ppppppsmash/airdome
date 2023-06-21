@@ -46,9 +46,9 @@ const Home = () => {
                 <ImageFallback
                   src={banner.image}
                   className="mx-auto"
-                  width="800"
+                  width="1400"
                   height="420"
-                  alt="banner image"
+                  alt="image"
                   priority
                 />
               </div>
@@ -89,6 +89,12 @@ const Home = () => {
                   className="mb-8 text-lg"
                   dangerouslySetInnerHTML={markdownify(feature.content)}
                 />
+                {feature.sub_content &&
+                <p
+                  className="mb-2 text-lg"
+                  dangerouslySetInnerHTML={markdownify(feature.sub_content)}
+                />
+                }
                 <ul>
                   {feature.bulletpoints.map((bullet: string) => (
                     <li className="relative mb-4 pl-6" key={bullet}>

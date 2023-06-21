@@ -24,7 +24,7 @@ export interface NavigationLink {
 const Header = () => {
   // distructuring the main menu from menu object
   const { main }: { main: NavigationLink[] } = menu;
-  const { navigation_button, settings } = config;
+  const { settings } = config;
   // get current path
   const pathname = usePathname();
 
@@ -119,16 +119,6 @@ const Header = () => {
               )}
             </React.Fragment>
           ))}
-          {navigation_button.enable && (
-            <li className="mt-4 inline-block lg:hidden">
-              <Link
-                className="btn btn-outline-primary btn-sm"
-                href={navigation_button.link}
-              >
-                {navigation_button.label}
-              </Link>
-            </li>
-          )}
         </ul>
         <div className="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
           {settings.search && (
@@ -141,14 +131,6 @@ const Header = () => {
             </Link>
           )}
           <ThemeSwitcher className="mr-5" />
-          {navigation_button.enable && (
-            <Link
-              className="btn btn-outline-primary btn-sm hidden lg:inline-block"
-              href={navigation_button.link}
-            >
-              {navigation_button.label}
-            </Link>
-          )}
         </div>
       </nav>
     </header>

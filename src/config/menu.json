@@ -1,19 +1,23 @@
 {
   "main": [
     {
-      "name": "Home",
+      "name": "ホーム",
       "url": "/"
     },
     {
-      "name": "About",
+      "name": "会社概要",
       "url": "/about"
     },
     {
-      "name": "Elements",
+      "name": "事業",
       "url": "/elements"
     },
     {
-      "name": "Pages",
+      "name": "お問い合わせ",
+      "url": "/contact"
+    },
+    {
+      "name": "その他",
       "url": "",
       "hasChildren": true,
       "children": [

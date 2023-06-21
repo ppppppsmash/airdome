@@ -48,6 +48,7 @@ export type Feature = {
   image: string;
   bulletpoints: string[];
   content: string;
+  sub_content: string;
   title: string;
 };
 
