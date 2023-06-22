@@ -95,7 +95,7 @@ const Header = () => {
                           className={`nav-dropdown-link block ${
                             (pathname === `${child.url}/` ||
                               pathname === child.url) &&
-                            "active"
+                            "active border-b-4 border-white dark:border-gray-950"
                           }`}
                         >
                           {child.name}
@@ -110,8 +110,16 @@ const Header = () => {
                     href={menu.url}
                     className={`nav-link block ${
                       (pathname === `${menu.url}/` || pathname === menu.url) &&
-                      "active"
+                      "active border-b-4 border-gray-950 dark:border-white"
                     }`}
+                    style={
+                      (pathname === `${menu.url}/` || pathname === menu.url)
+                        ? {
+                            transition: 'border-width 0.3s ease-in-out',
+                            borderBottomWidth: '4px',
+                          }
+                        : {}
+                    }
                   >
                     {menu.name}
                   </Link>
