@@ -26,7 +26,7 @@ const About = () => {
                 <ImageFallback
                   className="mx-auto mb-6 rounded-lg"
                   src={image}
-                  width={200}
+                  width={1200}
                   height={200}
                   alt={title}
                 />
