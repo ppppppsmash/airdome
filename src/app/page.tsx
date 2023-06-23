@@ -1,4 +1,5 @@
 import ImageFallback from "@/components/ImageFallback";
+import ModelViewer from "@/components/ModelViewer";
 import { getListPage } from "@/lib/contentParser";
 import { markdownify } from "@/lib/utils/textConverter";
 import CallToAction from "@/partials/CallToAction";
@@ -41,7 +42,7 @@ const Home = () => {
                 </a>
               )}
             </div>
-            {banner.image && (
+            {/* {banner.image && (
               <div className="col-12">
                 <ImageFallback
                   src={banner.image}
@@ -52,7 +53,9 @@ const Home = () => {
                   priority
                 />
               </div>
-            )}
+            )} */}
+
+            <ModelViewer />
           </div>
         </div>
       </section>

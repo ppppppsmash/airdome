@@ -37,10 +37,23 @@ const Logo = ({ src }: { src?: string }) => {
 
   return (
     <Link href="/" className="navbar-brand inline-block">
-      <p className="flex items-center gap-2">
+      {/* <p className="flex items-center gap-2">
         <CommandLineIcon className="w-10 h-10" />
         Himalaya
-      </p>
+      </p> */}
+
+        <Image
+          width={logo_width.replace("px", "") * 2}
+          height={logo_height.replace("px", "") * 2}
+          src={logoPath}
+          alt={title}
+          priority
+          style={{
+            height: logo_height.replace("px", "") + "px",
+            width: logo_width.replace("px", "") + "px",
+          }}
+        />
+
     </Link>
   );
 };
