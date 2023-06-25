@@ -33,7 +33,6 @@ const Home = () => {
                 dangerouslySetInnerHTML={markdownify(banner.title)}
               />
               <p
-                className="md:mb-8"
                 dangerouslySetInnerHTML={markdownify(banner.content ?? "")}
               />
               {banner.button!.enable && (
