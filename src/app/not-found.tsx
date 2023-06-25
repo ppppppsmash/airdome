@@ -31,7 +31,7 @@ const NotFound = async () => {
                 <MDXContent content={data.content} />
               </div>
               <Link href="/" className="btn btn-primary mt-8">
-                Back To Home
+                ホームに戻る
               </Link>
             </div>
           </div>
