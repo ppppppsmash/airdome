@@ -24,7 +24,7 @@ export interface NavigationLink {
 const Header = () => {
   // distructuring the main menu from menu object
   const { main }: { main: NavigationLink[] } = menu;
-  const { navigation_button, settings } = config;
+  const { settings } = config;
   // get current path
   const pathname = usePathname();
 
@@ -95,7 +95,7 @@ const Header = () => {
                           className={`nav-dropdown-link block ${
                             (pathname === `${child.url}/` ||
                               pathname === child.url) &&
-                            "active"
+                            "active border-b-4 border-white dark:border-gray-950"
                           }`}
                         >
                           {child.name}
@@ -110,8 +110,16 @@ const Header = () => {
                     href={menu.url}
                     className={`nav-link block ${
                       (pathname === `${menu.url}/` || pathname === menu.url) &&
-                      "active"
+                      "active border-b-4 border-gray-950 dark:border-white"
                     }`}
+                    style={
+                      (pathname === `${menu.url}/` || pathname === menu.url)
+                        ? {
+                            transition: 'border-width 0.3s ease-in-out',
+                            borderBottomWidth: '4px',
+                          }
+                        : {}
+                    }
                   >
                     {menu.name}
                   </Link>
@@ -119,36 +127,18 @@ const Header = () => {
               )}
             </React.Fragment>
           ))}
-          {navigation_button.enable && (
-            <li className="mt-4 inline-block lg:hidden">
-              <Link
-                className="btn btn-outline-primary btn-sm"
-                href={navigation_button.link}
-              >
-                {navigation_button.label}
-              </Link>
-            </li>
-          )}
         </ul>
         <div className="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
-          {/* {settings.search && (
+          {settings.search && (
             <Link
               className="mr-5 inline-block border-r border-border pr-5 text-xl text-dark hover:text-primary dark:border-darkmode-border dark:text-white"
               href="/search"
               aria-label="search"
             >
-              <IoSearch />
-            </Link>
-          )} */}
-          <ThemeSwitcher className="mr-5" />
-          {navigation_button.enable && (
-            <Link
-              className="btn btn-outline-primary btn-sm hidden lg:inline-block"
-              href={navigation_button.link}
-            >
-              {navigation_button.label}
+              {/* <IoSearch /> */}
             </Link>
           )}
+          <ThemeSwitcher className="mr-5" />
         </div>
       </nav>
     </header>
