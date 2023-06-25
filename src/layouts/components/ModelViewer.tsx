@@ -1,4 +1,5 @@
 "use client"
+import { useMediaQuery } from "react-responsive"
 // const ModelViewer = () => {
 //   const { scene } = useLoader(ColladaLoader, "/models/model.dae" );
 
@@ -52,10 +53,12 @@ const Airdome = () => {
 };
 
 const ModelViewer = () => {
+  const isMobile = useMediaQuery({ maxWidth: 767 });
+  const zoom = isMobile ? 1 : 3;
   return (
     <Canvas
-      className="w-full md:h-[600px] h-[300px]"
-      shadows camera={{ position: [-80, 10, 50], fov: 15, zoom: 1.8 }}
+      className="w-full !md:h-[400px] !h-[300px]"
+      shadows camera={{ position: [-80, 10, 50], fov: 15, zoom }}
     >
       <Airdome />
     </Canvas>

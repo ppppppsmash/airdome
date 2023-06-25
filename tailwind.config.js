@@ -98,6 +98,5 @@ module.exports = {
         5: "3rem",
       },
     }),
-  ],
-  important: true,
+  ]
 };
