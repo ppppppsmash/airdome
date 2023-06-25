@@ -5,6 +5,9 @@ const nextConfig = {
   reactStrictMode: true,
   basePath: config.base_path !== "/" ? config.base_path : "",
   trailingSlash: config.site.trailing_slash,
+  images: {
+    domains: [],
+  },
 };
 
 module.exports = nextConfig;
