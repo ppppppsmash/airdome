@@ -129,7 +129,8 @@ const Header = () => {
           ))}
         </ul>
         <div className="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
-          {settings.search && (
+          {/* Searchコンポーネントを一旦コメントアウト */}
+          {/* {settings.search && (
             <Link
               className="mr-5 inline-block border-r border-border pr-5 text-xl text-dark hover:text-primary dark:border-darkmode-border dark:text-white"
               href="/search"
@@ -137,7 +138,7 @@ const Header = () => {
             >
               <IoSearch />
             </Link>
-          )}
+          )} */}
           <ThemeSwitcher className="mr-5" />
         </div>
       </nav>

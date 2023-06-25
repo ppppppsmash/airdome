@@ -26,39 +26,39 @@ const Contact = async () => {
               <form action={contact_form_action} method="POST">
                 <div className="mb-6">
                   <label htmlFor="name" className="form-label">
-                    Full Name <span className="text-red-500">*</span>
+                    お名前 <span className="text-red-500">*</span>
                   </label>
                   <input
                     id="name"
                     className="form-input"
-                    placeholder="John Doe"
+                    placeholder="ヒマラヤ 太郎"
                     type="text"
                   />
                 </div>
                 <div className="mb-6">
                   <label htmlFor="mail" className="form-label">
-                    Working Mail <span className="text-red-500">*</span>
+                    E-mail <span className="text-red-500">*</span>
                   </label>
                   <input
                     id="mail"
                     className="form-input"
-                    placeholder="john.doe@email.com"
+                    placeholder="taro@gmail.com"
                     type="email"
                   />
                 </div>
                 <div className="mb-6">
                   <label htmlFor="message" className="form-label">
-                    Anything else? <span className="text-red-500">*</span>
+                    お問い合わせ内容 <span className="text-red-500">*</span>
                   </label>
                   <textarea
                     className="form-input"
-                    placeholder="Message goes here..."
+                    placeholder="入力してください"
                     id="message"
                     rows={8}
                   ></textarea>
                 </div>
                 <button type="submit" className="btn btn-primary">
-                  Submit
+                  送信
                 </button>
               </form>
             </div>
