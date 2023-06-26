@@ -35,6 +35,6 @@ draft: false
 
 ---
 
-### Youtube video
+### コンセプト動画
 
 <Youtube id="tlN7bgW3rg4" title="Play:Youtube"/>
