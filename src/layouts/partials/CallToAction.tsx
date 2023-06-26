@@ -41,6 +41,7 @@ const CallToAction = ({ data }: { data: PageData }) => {
                   {data.frontmatter.button.enable && (
                     <a
                       className="btn btn-primary"
+                      target="_blank"
                       href={data.frontmatter.button.link}
                     >
                       {data.frontmatter.button.label}

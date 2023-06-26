@@ -1,10 +1,10 @@
 ---
 enable: true
-title: "Ready to build your next project with Next?"
+title: "エアドーム詳細"
 image: "/images/call-to-action.png"
-description: "Experience the future of web development with Nextplate and Next. Build lightning-fast static sites with ease and flexibility."
+description: "私たちが創業以来一貫して取り組んできたのは、エアドームを世界へ、世界のスポーツに貢献し続けていきます。"
 button:
   enable: true
-  label: "Get Started Now"
-  link: "https://github.com/zeon-studio/nextplate"
+  label: "エアドームについてもっと知りたい"
+  link: "https://new-himalaya.com/"
 ---

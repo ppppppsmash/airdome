@@ -6,7 +6,7 @@ description: "テキスト"
 # Testimonials
 testimonials:
   - name: "タイトルテキスト"
-    designation: "Web Designer"
+    designation: "Air dome"
     avatar: "/images/avatar-sm.png"
     content: "テキスト"
 
