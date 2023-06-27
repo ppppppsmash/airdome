@@ -6,35 +6,36 @@ import SeoMeta from "@/partials/SeoMeta";
 import { RegularPage } from "@/types";
 import { useState } from "react";
 
-const Contact = async () => {
+const Contact = () => {
   // const data: RegularPage = getListPage("pages/contact.md");
   // const { frontmatter } = data;
   // const { title, description, meta_title, image } = frontmatter;
   // const { contact_form_action } = config.params;
 
   const [form, setForm] = useState({
-    name: '',
-    company: '',
-    mail: '',
-    message: '',
+    name: "",
+    company: "",
+    mail: "",
+    message: "",
   });
 
   const handleSubmit = async (e: React.FormEvent<HTMLButtonElement>) => {
     e.preventDefault();
   
-    await fetch(`${process.env.NEXT_PUBLIC_URL}/contact`, {
-      method: 'POST',
+    await fetch(`${process.env.NEXT_PUBLIC_URL}/api/contact`, {
+      method: "POST",
       body: JSON.stringify({
         name: form.name,
         company: form.company,
-        email: form.mail,
-        msg: form.message,
+        mail: form.mail,
+        message: form.message,
       }),
     })
       .then((res) => {
-        console.log('Response received');
+        console.log("Response received");
+        console.log(res)
         if (res.status === 200) {
-          console.log('Response succeeded!');
+          console.log("Response succeeded!");
         } else {
           console.log(`Error: Status Code ${res.status}`);
         }
@@ -65,6 +66,14 @@ const Contact = async () => {
                   </label>
                   <input
                     id="name"
+                    value={form.name}
+                    onChange={(e) => {
+                      const val = e.currentTarget.value;
+                      setForm((props) => ({
+                        ...props,
+                        name: val !== null ? val : "",
+                      }));
+                    }}
                     className="form-input"
                     placeholder="ヒマラヤ 太郎"
                     type="text"
@@ -77,6 +86,14 @@ const Contact = async () => {
                   </label>
                   <input
                     id="company"
+                    onChange={(e) => {
+                      const val = e.currentTarget.value;
+                      setForm((props) => ({
+                        ...props,
+                        company: val !== null ? val : "",
+                      }));
+                    }}
+                    value={form.company}
                     className="form-input"
                     placeholder="ヒマラヤ合同会社"
                     type="text"
@@ -88,6 +105,14 @@ const Contact = async () => {
                   </label>
                   <input
                     id="mail"
+                    onChange={(e) => {
+                      const val = e.currentTarget.value;
+                      setForm((props) => ({
+                        ...props,
+                        mail: val !== null ? val : "",
+                      }));
+                    }}
+                    value={form.mail}
                     className="form-input"
                     placeholder="taro@gmail.com"
                     type="email"
@@ -99,9 +124,17 @@ const Contact = async () => {
                     お問い合わせ内容 <span className="text-red-500">*</span>
                   </label>
                   <textarea
+                    id="message"
+                    onChange={(e) => {
+                      const val = e.currentTarget.value;
+                      setForm((props) => ({
+                        ...props,
+                        message: val !== null ? val : "",
+                      }));
+                    }}
+                    value={form.message}
                     className="form-input"
                     placeholder="入力してください"
-                    id="message"
                     rows={8}
                     required
                   ></textarea>

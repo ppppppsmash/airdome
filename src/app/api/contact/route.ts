@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { createTransport } from "nodemailer";
 
-export async function GET(request: Request, response: Response) {
+export async function POST(request: Request, response: Response) {
   const transporter = createTransport({
     port: 465,
     host: "smtp.gmail.com",
@@ -12,27 +12,31 @@ export async function GET(request: Request, response: Response) {
     }
   });
 
-  const bodyText = await request.text();
-  const data = JSON.parse(bodyText);
+  //const data = JSON.parse(request.body);
+  const data = await request.text();
+  const parsedData = JSON.parse(data);
 
   const sendGmail = await transporter.sendMail({
     from: process.env.NEXT_PUBLIC_MAIL_USER,
-    to: data.email,
+    to: parsedData.mail,
     subject: '以下の内容でお問い合わせを受け付けました',
     text: `
     お名前
-    ${data.name}
+    ${parsedData.name}
 
     会社
-    ${data.company}
+    ${parsedData.company}
     
     メールアドレス
-    ${data.mail}
+    ${parsedData.mail}
     
     お問い合わせ内容
-    ${data.message}
+    ${parsedData.message}
     `,
   });
 
-  return NextResponse.json({ sendGmail })
+  console.log(sendGmail)
+
+  //return NextResponse.json({ sendGmail })
+  return NextResponse.json({sendGmail})
 }
