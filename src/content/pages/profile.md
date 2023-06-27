@@ -1,6 +1,6 @@
 ---
 title: "私たちについて"
-meta_title: "About"
+meta_title: "私たちについて | ヒマラヤ"
 description: "introduce"
 image: "/images/company.png"
 layout: "about"

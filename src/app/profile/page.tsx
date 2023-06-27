@@ -24,9 +24,6 @@ const Profile = () => {
         image={image}
       />
 
-      <Testimonials data={testimonial} />
-      <CallToAction data={callToAction} />
-
       <section className="section-sm">
         <div className="container">
           <div className="row justify-center">
@@ -42,6 +39,9 @@ const Profile = () => {
           </div>
         </div>
       </section>
+
+      {/* <Testimonials data={testimonial} /> */}
+      <CallToAction data={callToAction} />
 
     </>
   );
