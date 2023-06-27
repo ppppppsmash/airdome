@@ -33,6 +33,18 @@ const Contact = async () => {
                     className="form-input"
                     placeholder="ヒマラヤ 太郎"
                     type="text"
+                    required
+                  />
+                </div>
+                <div className="mb-6">
+                  <label htmlFor="company" className="form-label">
+                    会社
+                  </label>
+                  <input
+                    id="company"
+                    className="form-input"
+                    placeholder="ヒマラヤ 太郎"
+                    type="text"
                   />
                 </div>
                 <div className="mb-6">
@@ -44,6 +56,7 @@ const Contact = async () => {
                     className="form-input"
                     placeholder="taro@gmail.com"
                     type="email"
+                    required
                   />
                 </div>
                 <div className="mb-6">
@@ -55,6 +68,7 @@ const Contact = async () => {
                     placeholder="入力してください"
                     id="message"
                     rows={8}
+                    required
                   ></textarea>
                 </div>
                 <button type="submit" className="btn btn-primary">
