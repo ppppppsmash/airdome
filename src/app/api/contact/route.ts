@@ -15,7 +15,7 @@ export async function GET(request: Request, response: Response) {
   const bodyText = await request.text();
   const data = JSON.parse(bodyText);
 
-  const mailSend = await transporter.sendMail({
+  const sendGmail = await transporter.sendMail({
     from: process.env.NEXT_PUBLIC_MAIL_USER,
     to: data.email,
     subject: '以下の内容でお問い合わせを受け付けました',
@@ -34,5 +34,5 @@ export async function GET(request: Request, response: Response) {
     `,
   });
 
-  return NextResponse.json({ mailSend })
+  return NextResponse.json({ sendGmail })
 }
