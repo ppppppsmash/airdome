@@ -43,7 +43,7 @@ const Contact = async () => {
                   <input
                     id="company"
                     className="form-input"
-                    placeholder="ヒマラヤ 太郎"
+                    placeholder="ヒマラヤ合同会社"
                     type="text"
                   />
                 </div>
