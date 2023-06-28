@@ -24,6 +24,7 @@ const Contact = () => {
   
     await fetch(`${process.env.NEXT_PUBLIC_URL}/api/contact`, {
       method: "POST",
+      cache: "no-store",
       body: JSON.stringify({
         name: form.name,
         company: form.company,
