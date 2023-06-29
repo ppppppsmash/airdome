@@ -1,4 +1,5 @@
 "use client";
+import { AlertDialog } from "@/components/Modal";
 import config from "@/config/config.json";
 import { getListPage } from "@/lib/contentParser";
 import PageHeader from "@/partials/PageHeader";
@@ -24,6 +25,7 @@ const Contact = () => {
   
     await fetch(`${process.env.NEXT_PUBLIC_URL}/api/contact`, {
       method: "POST",
+      cache: "no-store",
       body: JSON.stringify({
         name: form.name,
         company: form.company,
@@ -138,13 +140,17 @@ const Contact = () => {
                     required
                   ></textarea>
                 </div>
-                <button
-                  type="submit"
-                  className="btn btn-primary"
+                <AlertDialog
                   onClick={handleSubmit}
                 >
-                  送信
-                </button>
+                  <button
+                    type="submit"
+                    className="btn btn-primary"
+                    //
+                  >
+                    送信
+                  </button>
+                </AlertDialog>
               </form>
             </div>
           </div>
