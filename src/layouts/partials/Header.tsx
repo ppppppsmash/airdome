@@ -6,7 +6,7 @@ import config from "@/config/config.json";
 import menu from "@/config/menu.json";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { useState } from "react";
+import React from "react";
 import { IoSearch } from "react-icons/io5/index.js";
 
 export interface ChildNavigationLink {
@@ -28,8 +28,6 @@ const Header = () => {
   // get current path
   const pathname = usePathname();
 
-  const [isNavOpen, setIsNavOpen] = useState<boolean>(false); 
-
   return (
     <header
       className={`header z-30 ${settings.sticky_header && "sticky top-0"}`}
@@ -40,7 +38,7 @@ const Header = () => {
           <Logo />
         </div>
         {/* navbar toggler */}
-        <input id="nav-toggle" type="checkbox" className="hidden transform" checked={isNavOpen} onChange={() => setIsNavOpen(!isNavOpen)} />
+        <input id="nav-toggle" type="checkbox" className="hidden" />
         <label
           id="show-button"
           htmlFor="nav-toggle"
@@ -73,9 +71,7 @@ const Header = () => {
           {main.map((menu, i) => (
             <React.Fragment key={`menu-${i}`}>
               {menu.hasChildren ? (
-                <li
-                  className="nav-item nav-dropdown group relative"
-                >
+                <li className="nav-item nav-dropdown group relative">
                   <span
                     className={`nav-link inline-flex items-center ${
                       menu.children?.map(({ url }) => url).includes(pathname) ||
@@ -109,15 +105,12 @@ const Header = () => {
                   </ul>
                 </li>
               ) : (
-                <li
-                  className="nav-item"
-                  onClick={() => setIsNavOpen(!isNavOpen)}
-                >
+                <li className="nav-item">
                   <Link
                     href={menu.url}
                     className={`nav-link block ${
                       (pathname === `${menu.url}/` || pathname === menu.url) &&
-                      "active border-b-4 border-gray-950 dark:border-white transition-all duration-450"
+                      "active border-b-4 border-gray-950 dark:border-white"
                     }`}
                     style={
                       (pathname === `${menu.url}/` || pathname === menu.url)
