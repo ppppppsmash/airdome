@@ -42,7 +42,7 @@ const Home = () => {
               )}
             </div>
 
-            {/* <ModelViewer /> */}
+            <ModelViewer />
           </div>
         </div>
       </section>

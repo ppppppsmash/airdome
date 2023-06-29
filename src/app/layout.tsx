@@ -6,7 +6,6 @@ import Header from "@/partials/Header";
 import Providers from "@/partials/Providers";
 import DelaySection from "@/layouts/components/DelaySection";
 import "@/styles/main.scss";
-import { Suspense } from "react";
 
 export default function RootLayout({
   children,
@@ -29,7 +28,7 @@ export default function RootLayout({
         {/* favicon */}
         <link rel="shortcut icon" href={config.site.favicon} />
         {/* theme meta */}
-        <meta name="theme-name" content="nextplate" />
+        <meta name="theme-name" content="himalaya" />
         <meta name="msapplication-TileColor" content="#000000" />
         <meta
           name="theme-color"
@@ -62,9 +61,7 @@ export default function RootLayout({
           <Header />
           <main>
             <DelaySection delay={0.2}>
-              <Suspense fallback="Loading...🌀">
-                {children}
-              </Suspense>
+              {children}
             </DelaySection>
           </main>
           <Footer />
