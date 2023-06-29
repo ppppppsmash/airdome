@@ -16,7 +16,6 @@ const AlertDialog = ({onClick}: {
     <AlertDialogPrimitive.Root open={isOpen} onOpenChange={setIsOpen}>
       <AlertDialogPrimitive.Trigger asChild>
         <button
-          type="submit"
           className="btn btn-primary"
         >
           送信
