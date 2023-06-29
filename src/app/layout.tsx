@@ -61,11 +61,11 @@ export default function RootLayout({
         <Providers>
           <Header />
           <main>
-            <DelaySection delay={0.2}>
+            {/* <DelaySection delay={0.2}> */}
               {/* <Suspense fallback="Loading...🌀"> */}
                 {children}
               {/* </Suspense> */}
-            </DelaySection>
+            {/* </DelaySection> */}
           </main>
           <Footer />
         </Providers>
