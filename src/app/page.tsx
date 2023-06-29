@@ -41,20 +41,8 @@ const Home = () => {
                 </a>
               )}
             </div>
-            {/* {banner.image && (
-              <div className="col-12">
-                <ImageFallback
-                  src={banner.image}
-                  className="mx-auto"
-                  width="1400"
-                  height="420"
-                  alt="image"
-                  priority
-                />
-              </div>
-            )} */}
 
-            <ModelViewer />
+            {/* <ModelViewer /> */}
           </div>
         </div>
       </section>

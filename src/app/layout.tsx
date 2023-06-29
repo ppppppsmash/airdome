@@ -6,6 +6,7 @@ import Header from "@/partials/Header";
 import Providers from "@/partials/Providers";
 import DelaySection from "@/layouts/components/DelaySection";
 import "@/styles/main.scss";
+import { Suspense } from "react";
 
 export default function RootLayout({
   children,
@@ -61,7 +62,9 @@ export default function RootLayout({
           <Header />
           <main>
             <DelaySection delay={0.2}>
+              <Suspense fallback="Loading...🌀">
                 {children}
+              </Suspense>
             </DelaySection>
           </main>
           <Footer />
