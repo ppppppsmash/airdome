@@ -1,4 +1,5 @@
 "use client";
+import { AlertDialog } from "@/components/Modal";
 import config from "@/config/config.json";
 import { getListPage } from "@/lib/contentParser";
 import PageHeader from "@/partials/PageHeader";
@@ -139,13 +140,15 @@ const Contact = () => {
                     required
                   ></textarea>
                 </div>
-                <button
-                  type="submit"
-                  className="btn btn-primary"
-                  onClick={handleSubmit}
-                >
-                  送信
-                </button>
+                <AlertDialog>
+                  <button
+                    type="submit"
+                    className="btn btn-primary"
+                    //onClick={handleSubmit}
+                  >
+                    送信
+                  </button>
+                </AlertDialog>
               </form>
             </div>
           </div>
