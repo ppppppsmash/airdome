@@ -3,8 +3,7 @@ import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog";
 import { clsx } from "clsx";
 import React, { Fragment, useState } from "react";
 
-const AlertDialog = ({children, onClick}: {
-  children: React.ReactNode
+const AlertDialog = ({onClick}: {
   onClick(e: React.FormEvent<HTMLButtonElement>): void
 }) => {
   let [isOpen, setIsOpen] = useState(false);
@@ -16,7 +15,12 @@ const AlertDialog = ({children, onClick}: {
   return (
     <AlertDialogPrimitive.Root open={isOpen} onOpenChange={setIsOpen}>
       <AlertDialogPrimitive.Trigger asChild>
-        {children}
+        <button
+          type="submit"
+          className="btn btn-primary"
+        >
+          送信
+        </button>
       </AlertDialogPrimitive.Trigger>
       <AlertDialogPrimitive.Portal forceMount>
         <Transition.Root show={isOpen}>

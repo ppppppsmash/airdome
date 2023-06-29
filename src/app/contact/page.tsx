@@ -142,15 +142,7 @@ const Contact = () => {
                 </div>
                 <AlertDialog
                   onClick={handleSubmit}
-                >
-                  <button
-                    type="submit"
-                    className="btn btn-primary"
-                    //
-                  >
-                    送信
-                  </button>
-                </AlertDialog>
+                />
               </form>
             </div>
           </div>
