@@ -9,17 +9,17 @@ const Airdome = () => {
   const model = useLoader(ColladaLoader, "/models/model.dae");
   return (
     <>
-      <ambientLight />
-      <pointLight position={[10, 10, 10]} />
+      {/* <ambientLight /> */}
+      {/* <pointLight position={[10, 10, 10]} />
       <Stage intensity={0.5} environment="city" shadows={{ type: 'accumulative', bias: -0.001 }} adjustCamera={true}>
-        <group>
+        <group> */}
           <primitive
             object={model.scene}
           />
-        </group>
-      </Stage>
-      <OrbitControls autoRotate autoRotateSpeed={0.5} enableZoom={true} makeDefault minPolarAngle={Math.PI / 2} maxPolarAngle={Math.PI / 2} minDistance={50}  // カメラとモデルの最小距離を40に設定
-          maxDistance={80} />
+        {/* </group>
+      </Stage> */}
+      {/* <OrbitControls autoRotate autoRotateSpeed={0.5} enableZoom={true} makeDefault minPolarAngle={Math.PI / 2} maxPolarAngle={Math.PI / 2} minDistance={50}  // カメラとモデルの最小距離を40に設定
+          maxDistance={80} /> */}
     </>
   );
 };
