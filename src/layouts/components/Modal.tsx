@@ -2,19 +2,20 @@ import { Transition } from "@headlessui/react";
 import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog";
 import { clsx } from "clsx";
 import React, { Fragment, useState } from "react";
-import Button from "./shared/button";
 
-//interface AlertDialogProps {}
-
-const AlertDialog = ({children}: {
+const AlertDialog = ({children, onClick}: {
   children: React.ReactNode
+  onClick(e: React.FormEvent<HTMLButtonElement>): void
 }) => {
   let [isOpen, setIsOpen] = useState(false);
+  const handleSubmit = (e: React.FormEvent<HTMLButtonElement>) => {
+    onClick(e);
+    setIsOpen(false);
+  }
 
   return (
     <AlertDialogPrimitive.Root open={isOpen} onOpenChange={setIsOpen}>
       <AlertDialogPrimitive.Trigger asChild>
-        {/* <Button>Click</Button> */}
         {children}
       </AlertDialogPrimitive.Trigger>
       <AlertDialogPrimitive.Portal forceMount>
@@ -73,10 +74,11 @@ const AlertDialog = ({children}: {
                 <AlertDialogPrimitive.Action
                   className={clsx(
                     "inline-flex select-none justify-center rounded-md px-4 py-2 text-sm font-medium",
-                    "bg-[#1c1c1c] text-white hover:bg-[#1c1c1c] dark:bg-[#1c1c1c] dark:text-gray-100 dark:hover:bg-[#1c1c1c]",
+                    "bg-[#1c1c1c] text-white hover:bg-[#1c1c1c] dark:bg-white dark:text-[#1c1c1c] dark:hover:bg-[#1c1c1c] dark:hover:text-white",
                     "border border-transparent",
                     "focus:outline-none focus-visible:ring focus-visible:ring-gray-500 focus-visible:ring-opacity-75"
                   )}
+                  onClick={handleSubmit}
                 >
                   はい
                 </AlertDialogPrimitive.Action>
