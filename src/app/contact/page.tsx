@@ -140,9 +140,16 @@ const Contact = () => {
                     required
                   ></textarea>
                 </div>
-                <AlertDialog
+                {/* <AlertDialog
                   onClick={handleSubmit}
-                />
+                /> */}
+                <button
+                  type="submit"
+                  className="btn btn-primary"
+                  onClick={handleSubmit}
+                >
+                  送信
+                </button>
               </form>
             </div>
           </div>
