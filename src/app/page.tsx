@@ -35,11 +35,11 @@ const Home = () => {
               <p
                 dangerouslySetInnerHTML={markdownify(banner.content ?? "")}
               />
-              {/* {banner.button!.enable && (
+              {banner.button!.enable && (
                 <a className="btn btn-primary" href={banner.button!.link}>
                   {banner.button!.label}
                 </a>
-              )} */}
+              )}
             </div>
             {/* {banner.image && (
               <div className="col-12">

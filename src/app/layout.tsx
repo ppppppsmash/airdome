@@ -62,9 +62,9 @@ export default function RootLayout({
           <Header />
           <main>
             <DelaySection delay={0.2}>
-              <Suspense fallback="Loading...🌀">
+              {/* <Suspense fallback="Loading...🌀"> */}
                 {children}
-              </Suspense>
+              {/* </Suspense> */}
             </DelaySection>
           </main>
           <Footer />
