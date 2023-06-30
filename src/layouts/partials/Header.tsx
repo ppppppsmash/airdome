@@ -94,7 +94,7 @@ const Header = () => {
                   <ul className="nav-dropdown-list hidden group-hover:block lg:invisible lg:absolute lg:block lg:opacity-0 lg:group-hover:visible lg:group-hover:opacity-100">
                     {menu.children?.map((child, i) => (
                       <li className="nav-dropdown-item" key={`children-${i}`}>
-                        <Link
+                        <a
                           href={child.url}
                           className={`nav-dropdown-link block ${
                             (pathname === `${child.url}/` ||
@@ -103,7 +103,7 @@ const Header = () => {
                           }`}
                         >
                           {child.name}
-                        </Link>
+                        </a>
                       </li>
                     ))}
                   </ul>
@@ -113,7 +113,7 @@ const Header = () => {
                   className="nav-item"
                   onClick={() => setIsNavOpen(!isNavOpen)}
                 >
-                  <Link
+                  <a
                     href={menu.url}
                     className={`nav-link block ${
                       (pathname === `${menu.url}/` || pathname === menu.url) &&
@@ -129,7 +129,7 @@ const Header = () => {
                     }
                   >
                     {menu.name}
-                  </Link>
+                  </a>
                 </li>
               )}
             </React.Fragment>
@@ -137,13 +137,13 @@ const Header = () => {
         </ul>
         <div className="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
           {settings.search && (
-            <Link
+            <a
               className="mr-5 inline-block border-r border-border pr-5 text-xl text-dark hover:text-primary dark:border-darkmode-border dark:text-white"
               href="/search"
               aria-label="search"
             >
               {/* <IoSearch /> */}
-            </Link>
+            </a>
           )}
           <ThemeSwitcher className="mr-5" />
         </div>
