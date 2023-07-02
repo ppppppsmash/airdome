@@ -1,3 +1,5 @@
+import {useLocale} from 'next-intl';
+import {notFound} from 'next/navigation';
 import TwSizeIndicator from "@/components/TwSizeIndicator";
 import config from "@/config/config.json";
 import theme from "@/config/theme.json";
@@ -7,19 +9,29 @@ import Providers from "@/partials/Providers";
 import DelaySection from "@/layouts/components/DelaySection";
 import "@/styles/main.scss";
 import { Suspense } from "react";
-import '../i18n';
 
 export default function RootLayout({
   children,
+  params
 }: {
   children: React.ReactNode;
+  params: {
+    locale: string;
+  };
 }) {
   // import google font css
   const pf = theme.fonts.font_family.primary;
   const sf = theme.fonts.font_family.secondary;
 
+  const locale = useLocale();
+
+  // Show a 404 error if the user requests an unknown locale
+  if (params.locale !== locale) {
+    notFound();
+  }
+
   return (
-    <html suppressHydrationWarning={true} lang="ja">
+    <html suppressHydrationWarning={true} lang={locale}>
       <head>
         {/* responsive meta */}
         <meta

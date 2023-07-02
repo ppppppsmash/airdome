@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 import ImageFallback from "@/components/ImageFallback";
 import { ModelViewer } from "@/components/ModelViewer";
 import { getListPage } from "@/lib/contentParser";
@@ -7,10 +8,14 @@ import SeoMeta from "@/partials/SeoMeta";
 import Testimonials from "@/partials/Testimonials";
 import { Button, Feature } from "@/types";
 import { FaCheck } from "react-icons/fa/index.js";
-import { useTranslation } from 'react-i18next';
 
 const Home = () => {
-  const homepage = getListPage("_index.md");
+  const t = useTranslations('Index');
+  const lng = t("lng");
+  if(lng === 'JA') {
+    console.log('okok')
+  }
+  const homepage = lng === "JA" ? getListPage("ja/_index.md") : getListPage("cn/_index.md");
   const testimonial = getListPage("sections/testimonial.md");
   const callToAction = getListPage("sections/call-to-action.md");
   const { frontmatter } = homepage;
@@ -22,6 +27,8 @@ const Home = () => {
     features: Feature[];
   } = frontmatter;
 
+
+
   return (
     <>
       <SeoMeta />
@@ -29,6 +36,7 @@ const Home = () => {
         <div className="container">
           <div className="row justify-center">
             <div className="sm:mb-16 text-center lg:col-7">
+            <h1>{t("lng")}</h1>
               <h1
                 className="mb-4"
                 dangerouslySetInnerHTML={markdownify(banner.title)}
