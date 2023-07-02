@@ -7,7 +7,7 @@ import Providers from "@/partials/Providers";
 import DelaySection from "@/layouts/components/DelaySection";
 import "@/styles/main.scss";
 import { Suspense } from "react";
-//import { Suspense } from "react";
+import '../i18n';
 
 export default function RootLayout({
   children,

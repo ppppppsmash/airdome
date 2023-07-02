@@ -7,6 +7,7 @@ import SeoMeta from "@/partials/SeoMeta";
 import Testimonials from "@/partials/Testimonials";
 import { Button, Feature } from "@/types";
 import { FaCheck } from "react-icons/fa/index.js";
+import { useTranslation } from 'react-i18next';
 
 const Home = () => {
   const homepage = getListPage("_index.md");

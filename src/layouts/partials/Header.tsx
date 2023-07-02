@@ -2,12 +2,12 @@
 
 import Logo from "@/components/Logo";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
+import TranslateButton from "@/components/TranslateButton";
 import config from "@/config/config.json";
 import menu from "@/config/menu.json";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
-import { LanguageIcon } from "@heroicons/react/24/solid";
 
 export interface ChildNavigationLink {
   name: string;
@@ -136,18 +136,7 @@ const Header = () => {
           ))}
         </ul>
         <div className="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
-            <a
-              className="mr-5 inline-block border-r border-border pr-5 text-xl text-dark hover:text-primary dark:border-darkmode-border dark:text-white"
-              href="/"
-              aria-label="language"
-            >
-              <p className="flex">
-              <LanguageIcon
-                className="w-5 h-5"
-              />
-              <span className="text-sm">中</span>
-              </p>
-            </a>
+          <TranslateButton />
           <ThemeSwitcher className="mr-5" />
         </div>
       </nav>
