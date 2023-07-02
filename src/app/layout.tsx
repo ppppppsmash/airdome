@@ -19,7 +19,7 @@ export default function RootLayout({
   const sf = theme.fonts.font_family.secondary;
 
   return (
-    <html suppressHydrationWarning={true} lang="en">
+    <html suppressHydrationWarning={true} lang="ja">
       <head>
         {/* responsive meta */}
         <meta
@@ -62,7 +62,7 @@ export default function RootLayout({
         <Providers>
           <Header />
             <DelaySection delay={0.2}>
-              <Suspense fallback="Loading...🌀">
+              <Suspense fallback={<div className="w-[200px] mx-auto">Loading...🌀</div>}>
                 {children}
               </Suspense>
             </DelaySection>

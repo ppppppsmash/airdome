@@ -7,7 +7,7 @@ import menu from "@/config/menu.json";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
-import { IoSearch } from "react-icons/io5/index.js";
+import { LanguageIcon } from "@heroicons/react/24/solid";
 
 export interface ChildNavigationLink {
   name: string;
@@ -136,15 +136,18 @@ const Header = () => {
           ))}
         </ul>
         <div className="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
-          {settings.search && (
             <a
               className="mr-5 inline-block border-r border-border pr-5 text-xl text-dark hover:text-primary dark:border-darkmode-border dark:text-white"
-              href="/search"
-              aria-label="search"
+              href="/"
+              aria-label="language"
             >
-              {/* <IoSearch /> */}
+              <p className="flex">
+              <LanguageIcon
+                className="w-5 h-5"
+              />
+              <span className="text-sm">中</span>
+              </p>
             </a>
-          )}
           <ThemeSwitcher className="mr-5" />
         </div>
       </nav>

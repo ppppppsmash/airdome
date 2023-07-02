@@ -5,7 +5,7 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { CommandLineIcon } from "@heroicons/react/24/outline"
+import { useMediaQuery } from "react-responsive";
 
 const Logo = ({ src }: { src?: string }) => {
   // destructuring items from config object
@@ -35,23 +35,19 @@ const Logo = ({ src }: { src?: string }) => {
       : logo;
   const logoPath = src ? src : resolvedLogo;
 
+  const isMobile = useMediaQuery({ maxWidth: 767 });
+  const width = isMobile ? "145" : "179";
+  const height = isMobile ? "44" : "55";
+
   return (
     <Link href="/" className="navbar-brand inline-block">
-      {/* <p className="flex items-center gap-2">
-        <CommandLineIcon className="w-10 h-10" />
-        Himalaya
-      </p> */}
 
         <Image
-          width={logo_width.replace("px", "") * 2}
-          height={logo_height.replace("px", "") * 2}
+          width={width}
+          height={height}
           src={logoPath}
           alt={title}
           priority
-          style={{
-            height: logo_height.replace("px", "") + "px",
-            width: logo_width.replace("px", "") + "px",
-          }}
         />
 
     </Link>
