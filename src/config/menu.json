@@ -17,6 +17,10 @@
       "url": "/profile"
     },
     {
+      "name": "Air Dome",
+      "url": "/airdome"
+    },
+    {
       "name": "お問い合わせ",
       "url": "/contact"
     }

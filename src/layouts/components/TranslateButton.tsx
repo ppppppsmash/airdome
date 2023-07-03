@@ -11,7 +11,6 @@ const TranslateButton = () => {
       href="/"
       aria-label="language"
     >
-      
       <p className="flex">
         <LanguageIcon className="w-5 h-5" />
           <span className="text-sm">CN</span>
