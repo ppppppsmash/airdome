@@ -11,27 +11,16 @@ import "@/styles/main.scss";
 import { Suspense } from "react";
 
 export default function RootLayout({
-  children,
-  params
+  children
 }: {
   children: React.ReactNode;
-  params: {
-    locale: string;
-  };
 }) {
   // import google font css
   const pf = theme.fonts.font_family.primary;
   const sf = theme.fonts.font_family.secondary;
 
-  const locale = useLocale();
-
-  // Show a 404 error if the user requests an unknown locale
-  if (params.locale !== locale) {
-    notFound();
-  }
-
   return (
-    <html suppressHydrationWarning={true} lang={locale}>
+    <html suppressHydrationWarning={true}>
       <head>
         {/* responsive meta */}
         <meta
