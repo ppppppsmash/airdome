@@ -4,12 +4,12 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import React from "react"
 
-import image5 from ".jpeg"
-import image1 from ".jpeg"
-import image3 from ".jpeg"
-import image6 from ".jpeg"
-import image2 from ".jpeg"
-import image4 from ".jpeg"
+import image1 from "../../../public/images/airdome1.jpeg"
+import image2 from "../../../public/images/airdome2.jpeg"
+import image3 from "../../../public/images/airdome3.jpeg"
+import image4 from "../../../public/images/airdome4.jpeg"
+import image5 from "../../../public/images/airdome5.jpeg"
+import image6 from "../../../public/images/airdome6.jpeg"
 
 const images = [image1, image2, image3, image4, image5, image6]
 const alts = [
@@ -64,7 +64,7 @@ export function Photos() {
               width,
               opacity: isCompact ? 1 : 0.85,
               filter: isCompact ? "grayscale(0)" : "grayscale(0.5)",
-              rotate: idx % 2 === 0 ? 2 : -1,
+              //rotate: idx % 2 === 0 ? 2 : -1,
             }}
             whileHover={
               isCompact
