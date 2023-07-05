@@ -24,6 +24,8 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLButtonElement>) => {
     e.preventDefault();
+
+    setIsSend(true);
   
     await fetch(`${process.env.NEXT_PUBLIC_URL}/api/contact`, {
       method: "POST",
@@ -39,10 +41,7 @@ const Contact = () => {
       }),
     })
       .then((res) => {
-        console.log("Response received");
-        console.log(res)
         if (res.status === 200) {
-          setIsSend(true);
           console.log("Response succeeded!");
         } else {
           console.log(`Error: Status Code ${res.status}`);
@@ -155,7 +154,7 @@ const Contact = () => {
               }
 
               {isSend && 
-                <p>ご送信いただき、ありがとうございます！</p>
+                <p className="text-center">ご送信いただき、ありがとうございます！</p>
               }
             </div>
           </div>

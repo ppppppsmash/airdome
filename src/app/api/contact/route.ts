@@ -19,7 +19,7 @@ export async function POST(request: Request, response: Response) {
 
   const sendGmail = await transporter.sendMail({
     from: process.env.NEXT_PUBLIC_MAIL_USER,
-    to: [parsedData.mail, process.env.NEXT_PUBLIC_MAIL_USER],
+    to: [parsedData.mail],
     subject: '以下の内容でお問い合わせを受け付けました',
     text: `
     お名前
