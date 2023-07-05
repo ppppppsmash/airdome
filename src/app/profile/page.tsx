@@ -41,7 +41,7 @@ const Profile = () => {
       </section>
 
       {/* <Testimonials data={testimonial} /> */}
-      <CallToAction data={callToAction} />
+      {/* <CallToAction data={callToAction} /> */}
 
     </>
   );
