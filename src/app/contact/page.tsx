@@ -164,11 +164,10 @@ const Contact = () => {
                   damping: 20
                 }}
               >
-                <h4 className="text-center font-bold text-lg mt-6 mb-4">ご送信いただき、ありがとうございます✨</h4>
+                <h4 className="text-center font-bold text-lg mt-6 mb-8">ご送信いただき、ありがとうございます✨</h4>
                 <p className="text-justify mb-6">
                 このたびは、ヒマラヤ合同会社へお問い合わせ頂き誠にありがとうございます。<br />
                 お送り頂きました内容を確認の上、2営業日以内に折り返しご連絡させて頂きます。<br />
-                しばらく経ってもメールが届かない場合は、入力頂いたメールアドレスが間違っているか、迷惑メールフォルダに振り分けられている可能性がございます。<br />
                 なお、お急ぎの場合は電話でもご相談を受け付けております。<br />
                 「050-6865-6848」 までご遠慮なくご相談ください。
                 </p>
@@ -176,7 +175,6 @@ const Contact = () => {
                 <div className="text-center mb-6">
                   <a
                     className="btn btn-primary"
-                    target="_blank"
                     href="/"
                   >
                     トップページに戻る

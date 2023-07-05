@@ -61,15 +61,15 @@ export default function RootLayout({
 
       <body suppressHydrationWarning={true}>
         <TwSizeIndicator />
-        <Providers>
-          <Header />
-            <DelaySection delay={0.2}>
-              <Suspense fallback={<Loading />}>
-                {children}
-              </Suspense>
-            </DelaySection>
-          <Footer />
-        </Providers>
+          <Providers>
+            <Header />
+              <DelaySection delay={0.2}>
+                <Suspense fallback={<Loading />}>
+                  {children}
+                </Suspense>
+              </DelaySection>
+            <Footer />
+          </Providers>
       </body>
     </html>
   );
