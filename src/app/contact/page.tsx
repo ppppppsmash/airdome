@@ -13,6 +13,8 @@ const Contact = () => {
   // const { title, description, meta_title, image } = frontmatter;
   // const { contact_form_action } = config.params;
 
+  const [isSend, setIsSend] = useState<boolean>(false);
+
   const [form, setForm] = useState({
     name: "",
     company: "",
@@ -25,6 +27,9 @@ const Contact = () => {
   
     await fetch(`${process.env.NEXT_PUBLIC_URL}/api/contact`, {
       method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+      },
       cache: "no-store",
       body: JSON.stringify({
         name: form.name,
@@ -37,6 +42,7 @@ const Contact = () => {
         console.log("Response received");
         console.log(res)
         if (res.status === 200) {
+          setIsSend(true);
           console.log("Response succeeded!");
         } else {
           console.log(`Error: Status Code ${res.status}`);
@@ -60,6 +66,8 @@ const Contact = () => {
         <div className="container">
           <div className="row">
             <div className="mx-auto md:col-10 lg:col-6">
+
+              {!isSend &&
               <form method="POST">
                 <div className="mb-6">
                   <label htmlFor="name" className="form-label">
@@ -144,6 +152,11 @@ const Contact = () => {
                   onClick={handleSubmit}
                 />
               </form>
+              }
+
+              {isSend && 
+                <p>ご送信いただき、ありがとうございます！</p>
+              }
             </div>
           </div>
         </div>

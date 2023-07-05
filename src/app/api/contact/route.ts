@@ -3,6 +3,7 @@ import { createTransport } from "nodemailer";
 
 export async function POST(request: Request, response: Response) {
   const transporter = createTransport({
+    service: "Gmail",
     port: 465,
     host: "smtp.gmail.com",
     secure: true,
