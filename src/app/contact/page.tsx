@@ -155,32 +155,33 @@ const Contact = () => {
               }
 
               {isSend && 
-              <motion.div
-                initial={{ scale: 0 }}
-                animate={{ rotate: 360, scale: 1.5 }}
-                transition={{
-                  type: "spring",
-                  stiffness: 260,
-                  damping: 20
-                }}
-              >
-                <h4 className="text-center font-bold text-lg mt-6 mb-8">ご送信いただき、ありがとうございます✨</h4>
-                <p className="text-justify mb-6">
-                このたびは、ヒマラヤ合同会社へお問い合わせ頂き誠にありがとうございます。<br />
-                お送り頂きました内容を確認の上、2営業日以内に折り返しご連絡させて頂きます。<br />
-                なお、お急ぎの場合は電話でもご相談を受け付けております。<br />
-                「050-6865-6848」 までご遠慮なくご相談ください。
-                </p>
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ rotate: 360, scale: 1 }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 260,
+                    damping: 20
+                  }}
+                >
+                  <h4 className="text-center font-bold text-lg mt-6 mb-8">ご送信いただき、ありがとうございます✨</h4>
+                  <p className="text-justify mb-6">
+                  このたびは、ヒマラヤ合同会社へお問い合わせ頂き誠にありがとうございます。<br />
+                  お送り頂きました内容を確認の上、2営業日以内に折り返しご連絡させて頂きます。<br />
+                  なお、お急ぎの場合は電話でもご相談を受け付けております。<br />
+                  「050-6865-6848」 までご遠慮なくご相談ください。
+                  </p>
 
-                <div className="text-center mb-6">
-                  <a
-                    className="btn btn-primary"
-                    href="/"
-                  >
-                    トップページに戻る
-                  </a>
-                </div>
-              </motion.div>
+                  <div className="text-center mb-6">
+                    <a
+                      className="btn btn-primary"
+                      href="/"
+                    >
+                      トップページに戻る
+                    </a>
+                  </div>
+                  
+                </motion.div>
               }
             </div>
           </div>
