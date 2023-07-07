@@ -8,7 +8,7 @@ import SeoMeta from "@/partials/SeoMeta";
 import { RegularPage } from "@/types";
 import { useState } from "react";
 import FormAlert from "@/components/FormAlert";
-import { inputCheck } from "@/lib/utils/formValidation";
+import { inputCheck, validateEmailFormat } from "@/lib/utils/formValidation";
 import { FaLessThan } from "react-icons/fa";
 
 const Contact = () => {
@@ -28,7 +28,7 @@ const Contact = () => {
   });
 
   const handleSubmit = async (e: React.FormEvent<HTMLButtonElement>) => {
-    if(!form.name || !form.mail || !form.message) {
+    if(!form.name || !form.mail || !form.message || validateEmailFormat(form.mail)) {
       setErrorFlg(true);
       setIsSend(false);
       return
@@ -70,6 +70,14 @@ const Contact = () => {
     setForm((prevForm) => ({
       ...prevForm,
       [id]: value,
+    }));
+  };
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target;
+    setForm((prevForm) => ({
+      ...prevForm,
+      mail: value,
     }));
   };
 
@@ -141,10 +149,16 @@ const Contact = () => {
                     required
                   />
                   {errorFlg && !form.mail && (
-                    <p className="text-red-400 mt-2">
-                      <span className="text-red-500 pr-1">*</span>
-                      {inputCheck(form.mail)}
-                    </p>
+                  <p className="text-red-400 mt-2">
+                    <span className="text-red-500 pr-1">*</span>
+                    {inputCheck(form.mail)}
+                  </p>
+                  )}
+                  {errorFlg && !validateEmailFormat(form.mail) && (
+                  <p className="text-red-400 mt-2">
+                    <span className="text-red-500 pr-1">*</span>
+                    有効なEmailを入力してください.
+                  </p>
                   )}
                 </div>
                 <div className="mb-6">
