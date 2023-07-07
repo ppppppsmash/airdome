@@ -38,9 +38,6 @@ const Contact = () => {
     }
     e.preventDefault();
 
-    
-    
-  
     await fetch(`${process.env.NEXT_PUBLIC_URL}/api/contact`, {
       method: "POST",
       headers: {
@@ -66,6 +63,16 @@ const Contact = () => {
       });
   };
 
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { id, value } = e.target;
+    setForm((prevForm) => ({
+      ...prevForm,
+      [id]: value,
+    }));
+  };
+
   return (
     <>
       {/* <SeoMeta
@@ -88,23 +95,18 @@ const Contact = () => {
                   <input
                     id="name"
                     value={form.name}
-                    onChange={(e) => {
-                      const val = e.currentTarget.value;
-                      setForm((props) => ({
-                        ...props,
-                        name: val !== null ? val : "",
-                      }));
-                    }}
+                    onChange={handleInputChange}
                     className="form-input"
                     placeholder="ヒマラヤ 太郎"
                     type="text"
                     required
                   />
-                  { errorFlg &&
-                    <>
-                      <p className="text-red-400 mt-2"><span className="text-red-500 pr-1">*</span>{inputCheck(form.name)}</p>
-                    </>
-                  }
+                  {errorFlg && !form.name && (
+                    <p className="text-red-400 mt-2">
+                      <span className="text-red-500 pr-1">*</span>
+                      {inputCheck(form.name)}
+                    </p>
+                  )}
                 </div>
                 <div className="mb-6">
                   <label htmlFor="company" className="form-label">
@@ -112,13 +114,7 @@ const Contact = () => {
                   </label>
                   <input
                     id="company"
-                    onChange={(e) => {
-                      const val = e.currentTarget.value;
-                      setForm((props) => ({
-                        ...props,
-                        company: val !== null ? val : "",
-                      }));
-                    }}
+                    onChange={handleInputChange}
                     value={form.company}
                     className="form-input"
                     placeholder="ヒマラヤ合同会社"
@@ -144,11 +140,12 @@ const Contact = () => {
                     type="email"
                     required
                   />
-                  { errorFlg &&
-                    <>
-                      <p className="text-red-400 mt-2"><span className="text-red-500 pr-1">*</span>{inputCheck(form.mail)}</p>
-                    </>
-                  }
+                  {errorFlg && !form.mail && (
+                    <p className="text-red-400 mt-2">
+                      <span className="text-red-500 pr-1">*</span>
+                      {inputCheck(form.mail)}
+                    </p>
+                  )}
                 </div>
                 <div className="mb-6">
                   <label htmlFor="message" className="form-label">
@@ -156,24 +153,19 @@ const Contact = () => {
                   </label>
                   <textarea
                     id="message"
-                    onChange={(e) => {
-                      const val = e.currentTarget.value;
-                      setForm((props) => ({
-                        ...props,
-                        message: val !== null ? val : "",
-                      }));
-                    }}
+                    onChange={handleInputChange}
                     value={form.message}
                     className="form-input"
                     placeholder="お問い合わせの内容を入力してください."
                     rows={8}
                     required
                   ></textarea>
-                  { errorFlg &&
-                    <>
-                      <p className="text-red-400"><span className="text-red-500 pr-1">*</span>{inputCheck(form.message)}</p>
-                    </>
-                  }
+                  {errorFlg && !form.message && (
+                    <p className="text-red-400">
+                      <span className="text-red-500 pr-1">*</span>
+                      {inputCheck(form.message)}
+                    </p>
+                  )}
                 </div>
                 <AlertDialog
                   onClick={handleSubmit}
