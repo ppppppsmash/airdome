@@ -2,7 +2,7 @@
 title: "ABOUT ヒマラヤ合同会社"
 meta_title: "About"
 description: "introduce"
-image: "/images/company.png"
+image: "/images/company.jpg"
 layout: "about"
 draft: false
 ---
