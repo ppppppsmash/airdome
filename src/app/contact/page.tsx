@@ -7,6 +7,9 @@ import PageHeader from "@/partials/PageHeader";
 import SeoMeta from "@/partials/SeoMeta";
 import { RegularPage } from "@/types";
 import { useState } from "react";
+import FormAlert from "@/components/FormAlert";
+import { inputCheck } from "@/lib/utils/formValidation";
+import { FaLessThan } from "react-icons/fa";
 
 const Contact = () => {
   // const data: RegularPage = getListPage("pages/contact.md");
@@ -15,6 +18,7 @@ const Contact = () => {
   // const { contact_form_action } = config.params;
 
   const [isSend, setIsSend] = useState<boolean>(false);
+  const [errorFlg, setErrorFlg] = useState<boolean>(false);
 
   const [form, setForm] = useState({
     name: "",
@@ -24,9 +28,18 @@ const Contact = () => {
   });
 
   const handleSubmit = async (e: React.FormEvent<HTMLButtonElement>) => {
+    if(!form.name || !form.mail || !form.message) {
+      setErrorFlg(true);
+      setIsSend(false);
+      return
+    } else {
+      setErrorFlg(false);
+      setIsSend(true);
+    }
     e.preventDefault();
 
-    setIsSend(true);
+    
+    
   
     await fetch(`${process.env.NEXT_PUBLIC_URL}/api/contact`, {
       method: "POST",
@@ -66,7 +79,6 @@ const Contact = () => {
         <div className="container">
           <div className="row">
             <div className="mx-auto md:col-10 lg:col-6">
-
               {!isSend &&
               <form method="POST">
                 <div className="mb-6">
@@ -88,6 +100,11 @@ const Contact = () => {
                     type="text"
                     required
                   />
+                  { errorFlg &&
+                    <>
+                      <p className="text-red-400 mt-2"><span className="text-red-500 pr-1">*</span>{inputCheck(form.name)}</p>
+                    </>
+                  }
                 </div>
                 <div className="mb-6">
                   <label htmlFor="company" className="form-label">
@@ -123,10 +140,15 @@ const Contact = () => {
                     }}
                     value={form.mail}
                     className="form-input"
-                    placeholder="taro@gmail.com"
+                    placeholder="Himalaya.taro@gmail.com"
                     type="email"
                     required
                   />
+                  { errorFlg &&
+                    <>
+                      <p className="text-red-400 mt-2"><span className="text-red-500 pr-1">*</span>{inputCheck(form.mail)}</p>
+                    </>
+                  }
                 </div>
                 <div className="mb-6">
                   <label htmlFor="message" className="form-label">
@@ -143,10 +165,15 @@ const Contact = () => {
                     }}
                     value={form.message}
                     className="form-input"
-                    placeholder="入力してください"
+                    placeholder="お問い合わせの内容を入力してください."
                     rows={8}
                     required
                   ></textarea>
+                  { errorFlg &&
+                    <>
+                      <p className="text-red-400"><span className="text-red-500 pr-1">*</span>{inputCheck(form.message)}</p>
+                    </>
+                  }
                 </div>
                 <AlertDialog
                   onClick={handleSubmit}
