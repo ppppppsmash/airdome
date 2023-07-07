@@ -1,5 +1,5 @@
 ---
-title: "ABOUT ヒマラヤ合同会社"
+title: "ヒマラヤ合同会社について"
 meta_title: "About"
 description: "introduce"
 image: "/images/company.jpg"
