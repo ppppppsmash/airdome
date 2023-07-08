@@ -25,9 +25,35 @@
       "url": "/contact"
     }
   ],
+  "main_cn": [
+    {
+      "name": "首页",
+      "url": "/cn"
+    },
+    {
+      "name": "公司简介",
+      "url": "/cn/about"
+    },
+    {
+      "name": "事业",
+      "url": "/cn/business"
+    },
+    {
+      "name": "关于我们",
+      "url": "/cn/profile"
+    },
+    {
+      "name": "气膜",
+      "url": "/cn/airdome"
+    },
+    {
+      "name": "联系我们",
+      "url": "/cn/contact"
+    }
+  ],
   "footer": [
     {
-      "name": "Privacy Policy",
+      "name": "プライバシー・ポリシー",
       "url": "/privacy-policy"
     }
   ]
