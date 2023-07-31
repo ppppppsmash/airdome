@@ -1,3 +1,4 @@
+import I18n from "@/components/I18n";
 import ImageFallback from "@/components/ImageFallback";
 import { ModelViewer } from "@/components/ModelViewer";
 import { getListPage } from "@/lib/contentParser";
@@ -12,6 +13,7 @@ const Home = () => {
   const testimonial = getListPage("sections/testimonial.md");
   const callToAction = getListPage("sections/call-to-action.md");
   const { frontmatter } = homepage;
+
   const {
     banner,
     features,
@@ -44,6 +46,7 @@ const Home = () => {
             </div>
 
             <ModelViewer />
+            {/* <I18n /> */}
           </div>
         </div>
       </section>
