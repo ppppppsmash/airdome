@@ -131,23 +131,23 @@ const Header = () => {
                 </li>
               ) : (
                 <li
-                  className="nav-item"
+                  className="relative nav-item"
                   onClick={() => setIsNavOpen(!isNavOpen)}
                 >
                   <a
                     href={menu.url}
-                    className="relative nav-link block transition"
+                    className="relative nav-link block"
                     onClick={() => handleNavItemClick(menu.url)}
                   >
                     {menu.name}
-                    {currentNavItem === menu.url &&
-                      <motion.span
-                        className="absolute active inset-x-1 -bottom-px h-px bg-gradient-to-r border-b-4 border-gray-950 dark:border-white"
-                        layoutId="active-nav-item"
-                        aria-hidden="true"
-                      />
-                    }
                   </a>
+                  {currentNavItem === menu.url &&
+                    <motion.span
+                      className="absolute active inset-x-1 -bottom-px h-px bg-gradient-to-r border-b-4 border-gray-950 dark:border-white"
+                      layoutId="active-nav-item"
+                      aria-hidden="true"
+                    />
+                  }
                 </li>
               )}
             </React.Fragment>
