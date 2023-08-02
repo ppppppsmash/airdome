@@ -26,9 +26,11 @@ const AirDome = () => {
       />
       <section className="section-sm bg-[url('/images/grid.svg')]">
         <div className="container">
-          <h2>Air Dome紹介</h2>
+          <h2>气膜介绍</h2>
           <h4 className="mt-4">原理</h4>
-          <p className="mt-8">空気支持構造建築、または気膜建築は、特殊な建築膜材を建築の外殻とし、完全に密閉された建築内部に空気圧を提供するスマートな運転制御システムを備えています。これにより、建築全体が常に外部環境に対して正圧を維持し、建築本体を内外の圧力差によって支持する建築構造システムです。</p>
+          <p className="mt-8">气膜建筑也称为空气支撑结构建筑，是以特殊的建筑膜材为建筑外壳，并配备一套智能化
+          的运行控制系统为完全密闭的建筑内部提供空气压力，使整体建筑内部始终保持对外部环
+          境的正压，从而靠内外部压力差把建筑主体支撑起来的一种建筑结构系统。</p>
         </div>
         <Photos />
         <div className="container">
