@@ -98,7 +98,7 @@ const Contact = () => {
               <form method="POST">
                 <div className="mb-6">
                   <label htmlFor="name" className="form-label">
-                    お名前 <span className="text-red-500">*</span>
+                    姓名 <span className="text-red-500">*</span>
                   </label>
                   <input
                     id="name"
@@ -118,7 +118,7 @@ const Contact = () => {
                 </div>
                 <div className="mb-6">
                   <label htmlFor="company" className="form-label">
-                    会社
+                    会社信息
                   </label>
                   <input
                     id="company"
@@ -131,7 +131,7 @@ const Contact = () => {
                 </div>
                 <div className="mb-6">
                   <label htmlFor="mail" className="form-label">
-                    E-mail <span className="text-red-500">*</span>
+                    邮件 <span className="text-red-500">*</span>
                   </label>
                   <input
                     id="mail"
@@ -157,20 +157,20 @@ const Contact = () => {
                   {errorFlg && !validateEmailFormat(form.mail) && (
                   <p className="text-red-400 mt-2">
                     <span className="text-red-500 pr-1">*</span>
-                    有効なEmailを入力してください.
+                    请输入有效的邮件格式.
                   </p>
                   )}
                 </div>
                 <div className="mb-6">
                   <label htmlFor="message" className="form-label">
-                    お問い合わせ内容 <span className="text-red-500">*</span>
+                    咨询内容 <span className="text-red-500">*</span>
                   </label>
                   <textarea
                     id="message"
                     onChange={handleInputChange}
                     value={form.message}
                     className="form-input"
-                    placeholder="お問い合わせの内容を入力してください."
+                    placeholder="请输入咨询内容."
                     rows={8}
                     required
                   ></textarea>
@@ -197,12 +197,13 @@ const Contact = () => {
                     damping: 20
                   }}
                 >
-                  <h4 className="text-center font-bold text-lg mt-6 mb-8">ご送信いただき、ありがとうございます✨</h4>
+                  <h4 className="text-center font-bold text-lg mt-6 mb-8">感谢您的关注✨</h4>
                   <p className="text-justify mb-6">
-                  このたびは、ヒマラヤ合同会社へお問い合わせ頂き誠にありがとうございます。<br />
-                  お送り頂きました内容を確認の上、2営業日以内に折り返しご連絡させて頂きます。<br />
-                  なお、お急ぎの場合は電話でもご相談を受け付けております。<br />
-                  「050-6865-6848」 までご遠慮なくご相談ください。
+                  非常感谢您与我们的联系。<br />
+                  我们已经收到您的询问内容，将在两个工作日内与您联系。<br />
+                  如果您有紧急事项，也可随时致电咨询。<br />
+                  电话号码：050-6865-6848<br />
+                  再次感谢您的来信，我们期待与您进一步合作
                   </p>
 
                   <div className="text-center mb-6">
@@ -210,7 +211,7 @@ const Contact = () => {
                       className="btn btn-primary"
                       href="/"
                     >
-                      トップページに戻る
+                      回到首页
                     </a>
                   </div>
                   
