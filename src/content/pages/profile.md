@@ -1,15 +1,15 @@
 ---
-title: "私たちについて"
-meta_title: "私たちについて | ヒマラヤ"
-description: "introduce"
-image: "/images/company.png"
-layout: "about"
+title: "公司履历"
+meta_title: "公司履历"
+description: "喜馬拉雅合同会社履历"
+image: "/images/profile.png"
+layout: "profile"
 draft: false
 ---
 
 | 喜馬拉雅合同会社　　　　　　　　　　　　|       |
 | :-- | ----------:|
-| 法人番号   | 7010003031357 | 
+| 法人号码   | 7010003031357 | 
 | 商号   | 喜馬拉雅合同会社 |
 | E-mail  | himaraya1983@gmail.com
 | 連絡先   | TEL: 050-6865-6848 FAX: 050-6865-6848 |

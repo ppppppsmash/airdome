@@ -28,6 +28,15 @@ const Profile = () => {
         <div className="container">
           <div className="row justify-center">
             <div className="text-left md:col-10 lg:col-7">
+              {image && (
+                <ImageFallback
+                  className="mx-auto mb-6 rounded-lg"
+                  src={image}
+                  width={1200}
+                  height={200}
+                  alt={title}
+                />
+              )}
               <h2
                 dangerouslySetInnerHTML={markdownify(title)}
                 className="h3 mb-6 text-center"
