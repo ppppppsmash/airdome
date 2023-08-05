@@ -10,6 +10,7 @@ import DelaySection from "@/layouts/components/DelaySection";
 import "@/styles/main.scss";
 import { Suspense } from "react";
 import Loading from '@/components/Loading';
+import DialogParts from '@/components/Dialog';
 
 export default function RootLayout({
   children
@@ -68,6 +69,7 @@ export default function RootLayout({
                   {children}
                 </Suspense>
               </DelaySection>
+            <DialogParts />
             <Footer />
           </Providers>
       </body>
