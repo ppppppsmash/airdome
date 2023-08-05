@@ -1,6 +1,6 @@
 ---
 title: "会社履历"
-meta_title: "会社履历"
+meta_title: "会社履历 | Himalaya"
 description: "喜馬拉雅合同会社履历"
 image: "/images/profile.png"
 layout: "profile"

@@ -17,7 +17,7 @@ const AuthorCard = ({ data }: { data: any }) => {
         />
       )}
       <h4 className="mb-3">
-        <Link href={`/authors/${data.slug}`}>{title}</Link>
+        <Link href={`/business/${data.slug}`}>{title}</Link>
       </h4>
       <p className="mb-4">{plainify(data.content?.slice(0, 100))}</p>
       <Social source={social} className="social-icons" />

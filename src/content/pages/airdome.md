@@ -1,6 +1,6 @@
 ---
 title: "气膜 ヒマラヤ合同会社"
-meta_title: "气膜"
+meta_title: "气膜 | Himalaya"
 description: "气膜 airdome"
 image: "/images/company.png"
 layout: "airdome"

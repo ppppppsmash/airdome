@@ -13,7 +13,7 @@ export const dynamicParams = false;
 
 // generate static params
 export const generateStaticParams: () => { single?: string }[] = () => {
-  const authors: Author[] = getSinglePage("authors");
+  const authors: Author[] = getSinglePage("business");
 
   const paths = authors.map((author) => ({
     single: author.slug,
@@ -23,7 +23,7 @@ export const generateStaticParams: () => { single?: string }[] = () => {
 };
 
 const AuthorSingle = ({ params }: { params: { single: string } }) => {
-  const authors: Author[] = getSinglePage("authors");
+  const authors: Author[] = getSinglePage("business");
   const author = authors.filter((page) => page.slug === params.single)[0];
   const { frontmatter, content } = author;
   const { title, socials, meta_title, description, image } = frontmatter;
@@ -43,8 +43,8 @@ const AuthorSingle = ({ params }: { params: { single: string } }) => {
       />
       <section className="section-sm pb-0">
         <div className="container">
-          <div className="row justify-center border-b border-border pb-14 dark:border-darkmode-border">
-            <div className="text-center lg:col-4">
+          <div className="row justify-center">
+            <div className="text-left md:col-10 lg:col-7">
               {image && (
                 <ImageFallback
                   src={image}

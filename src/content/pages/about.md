@@ -1,6 +1,6 @@
 ---
 title: "关于我们"
-meta_title: "about us"
+meta_title: "关于我们 | Himalaya"
 description: "introduce himalaya"
 image: "/images/company.png"
 layout: "about"
