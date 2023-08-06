@@ -1,12 +1,17 @@
 import React from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
 import { Cross2Icon } from '@radix-ui/react-icons';
+import { BsFiletypePdf } from 'react-icons/bs/'
 
-const DialogParts = () => (
+const DialogParts = () => {
+  return (
   <Dialog.Root>
     <Dialog.Trigger asChild>
-      <button className="text-violet11 shadow-blackA7 hover:bg-mauve3 inline-flex h-[35px] items-center justify-center rounded-[4px] bg-white px-[15px] font-medium leading-none shadow-[0_2px_10px] focus:shadow-[0_0_0_2px] focus:shadow-black focus:outline-none">
-        气膜资料请求
+      <button className="z-100 fixed lg:bottom-4 lg:right-20 lg:w-[260px] lg:h-[55px]
+        bottom-24 right-4 w-[60px] h-[60px] hover:scale-[0.9] transition
+        text-black shadow-blackA7 hover:bg-mauve3 inline-flex items-center
+        justify-center bg-white px-[15px] leading-none shadow-[0_2px_10px] focus:shadow-[0_0_0_2px] focus:shadow-black focus:outline-none rounded-full">
+      <BsFiletypePdf size={25} /><span className="lg:block lg:text-[26px] pl-2 font-thin hidden">气膜资料请求</span>
       </button>
     </Dialog.Trigger>
     <Dialog.Portal>
@@ -56,6 +61,7 @@ const DialogParts = () => (
       </Dialog.Content>
     </Dialog.Portal>
   </Dialog.Root>
-);
+  )
+};
 
 export default DialogParts;

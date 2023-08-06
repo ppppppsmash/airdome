@@ -1,5 +1,6 @@
 "use client";
 
+import DialogParts from "@/components/Dialog";
 import Logo from "@/components/Logo";
 import Social from "@/components/Social";
 import config from "@/config/config.json";
@@ -12,7 +13,8 @@ const Footer = () => {
   const { copyright } = config.params;
 
   return (
-    <footer className="bg-theme-light dark:bg-darkmode-theme-light">
+    <footer className="relative bg-theme-light dark:bg-darkmode-theme-light">
+      <DialogParts />
       <div className="container">
         <div className="row items-center py-10">
           <div className="mb-8 text-center lg:col-3 lg:mb-0 lg:text-left">

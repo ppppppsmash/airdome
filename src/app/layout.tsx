@@ -69,7 +69,6 @@ export default function RootLayout({
                   {children}
                 </Suspense>
               </DelaySection>
-            <DialogParts />
             <Footer />
           </Providers>
       </body>

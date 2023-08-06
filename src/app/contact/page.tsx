@@ -10,6 +10,7 @@ import { useState } from "react";
 import FormAlert from "@/components/FormAlert";
 import { inputCheck, validateEmailFormat } from "@/lib/utils/formValidation";
 import { FaLessThan } from "react-icons/fa";
+import DialogParts from "@/components/Dialog";
 
 const Contact = () => {
   // const data: RegularPage = getListPage("pages/contact.md");
