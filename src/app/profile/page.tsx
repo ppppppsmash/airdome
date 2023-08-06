@@ -41,7 +41,7 @@ const Profile = () => {
                 dangerouslySetInnerHTML={markdownify(title)}
                 className="h3 mb-6 text-center"
               />
-              <div className="content">
+              <div className="content overflow-y-scroll">
                 <MDXContent content={content} />
               </div>
             </div>
