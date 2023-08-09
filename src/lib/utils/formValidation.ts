@@ -1,6 +1,6 @@
 export const inputCheck = (value: string) => {
   if(!value) {
-    return "必須項目を入力してください.";
+    return "内容不能为空.";
   } 
 
   return "";
