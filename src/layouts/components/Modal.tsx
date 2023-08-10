@@ -57,7 +57,7 @@ const AlertDialog = ({onClick}: {
               )}
             >
               <AlertDialogPrimitive.Title className="text-sm font-medium text-gray-900 dark:text-gray-100">
-                メールを送信しますか？
+                发送信息吗？
               </AlertDialogPrimitive.Title>
               {/* <AlertDialogPrimitive.Description className="mt-2 text-sm font-normal text-gray-700 dark:text-gray-400">
                 This action cannot be undone. This will permanently delete your
@@ -72,7 +72,7 @@ const AlertDialog = ({onClick}: {
                     "focus:outline-none focus-visible:ring focus-visible:ring-[#424242] focus-visible:ring-opacity-75"
                   )}
                 >
-                  いいえ
+                  否
                 </AlertDialogPrimitive.Cancel>
                 <AlertDialogPrimitive.Action
                   className={clsx(
@@ -83,7 +83,7 @@ const AlertDialog = ({onClick}: {
                   )}
                   onClick={handleSubmit}
                 >
-                  はい
+                  是
                 </AlertDialogPrimitive.Action>
               </div>
             </AlertDialogPrimitive.Content>
