@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import DialogParts from '../../layouts/components/Dialog'
 import '@testing-library/jest-dom'
- 
+
 describe('dialog', () => {
   it('renders a dialog', () => {
     render(<DialogParts />)
