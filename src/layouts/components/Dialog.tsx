@@ -24,10 +24,11 @@ const DialogParts = () => {
         </Dialog.Title>
         <Dialog.Description className="bg-white text-mauve11 mt-[10px] ml-2 mb-5 text-[15px] leading-normal">
           <p className="mb-4 flex gap-x-2">
-          <BiDownload size={20} /><Link className="mb-4 border-black border-b-2 border-dotted dark:text-gray-900" target="_blank" href="/file/Broadwell_Logistic_and_Warehouse_Dome.pdf">博德维物流与气膜说明.pdf</Link>
+            <BiDownload size={20} /><Link className="mb-4 border-black border-b-2 border-dotted dark:text-gray-900" target="_blank" href="/file/Broadwell_Logistic_and_Warehouse_Dome.pdf">博德维物流与气膜说明.pdf</Link>
           </p>
           <p className="flex gap-x-2">
-          <BiDownload size={20} /><Link className="border-black border-b-2 border-dotted dark:text-gray-900" target="_blank" href="/file/Broadwell_Air_Dome_General_Instruction.pdf">博德维气膜一般说明.pdf</Link>
+            <BiDownload size={20} /><Link className="border-black border-b-2 border-dotted dark:text-gray-900" target="_blank" href="/file/Broadwell_Air_Dome_General_Instruction.pdf">博德维气膜一般说明.pdf</Link>
+            <p className='hidden'>test</p>
           </p>
         </Dialog.Description>
 
