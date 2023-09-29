@@ -9,4 +9,5 @@ test('ボタンをクリックするとON/OFFの表示が切り替わる', async
   const button = screen.getByRole('button')
 
   expect(button).toHaveTextContent('OFF')
+  expect(screen.getByRole('button')).toBeDisabled()
 })
