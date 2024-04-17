@@ -13,7 +13,7 @@ const DialogParts = () => {
         bottom-24 right-4 w-[60px] h-[60px] hover:scale-[0.9] transition
         text-black shadow-blackA7 hover:bg-mauve3 inline-flex items-center
         justify-center bg-white px-[15px] leading-none shadow-[0_2px_10px] focus:shadow-[0_0_0_2px] focus:shadow-black focus:outline-none rounded-full">
-      <BsFiletypePdf size={22} /><span className="lg:block lg:text-[20px] pl-2 font-thin hidden">气膜资料请求</span>
+        <BsFiletypePdf size={22} /><span className="lg:block lg:text-[20px] pl-2 font-thin hidden">气膜资料请求</span>
       </button>
     </Dialog.Trigger>
     <Dialog.Portal>
