@@ -32,6 +32,8 @@ import {
   IoMail,
 } from "react-icons/io5/index.js";
 
+import { MdShoppingCart } from "react-icons/md";
+
 const Social = ({ source, className }: { source: any; className: string }) => {
   const {
     facebook,
@@ -65,6 +67,7 @@ const Social = ({ source, className }: { source: any; className: string }) => {
     address,
     skype,
     website,
+    shop
   } = source || {};
   return (
     <ul className={className}>
@@ -389,6 +392,18 @@ const Social = ({ source, className }: { source: any; className: string }) => {
             rel="noopener noreferrer nofollow"
           >
             <IoGlobeOutline />
+          </a>
+        </li>
+      )}
+      {shop && (
+        <li className="inline-block">
+          <a
+            aria-label="shop"
+            href={shop}
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+          >
+            <MdShoppingCart />
           </a>
         </li>
       )}
