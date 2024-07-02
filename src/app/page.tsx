@@ -1,4 +1,3 @@
-import I18n from "@/components/I18n";
 import ImageFallback from "@/components/ImageFallback";
 import { ModelViewer } from "@/components/ModelViewer";
 import { getListPage } from "@/lib/contentParser";
@@ -10,8 +9,6 @@ import { FaCheck } from "react-icons/fa/index.js";
 
 const Home = () => {
   const homepage = getListPage("_index.md");
-  const testimonial = getListPage("sections/testimonial.md");
-  const callToAction = getListPage("sections/call-to-action.md");
   const { frontmatter } = homepage;
 
   const {
