@@ -22,12 +22,18 @@ const nextConfig = {
   //   ]
   // },
   async rewrites() {
+    // return [
+    //   {
+    //     source: '/:lang(cn|ja)/:path*',
+    //     destination: '/:lang/:path*',
+    //   },
+    // ]
     return [
       {
-        source: '/:lang(cn|ja)/:path*',
-        destination: '/:lang/:path*',
+        source: '/',
+        destination: '/default',
       },
-    ]
+    ];
   },
 };
 
