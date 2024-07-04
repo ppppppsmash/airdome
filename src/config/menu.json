@@ -1,19 +1,19 @@
 {
   "main": [
     {
-      "name": "ホーム",
+      "name": "HOME",
       "url": "/"
     },
     {
-      "name": "会社概要",
+      "name": "ABOUT",
       "url": "/about"
     },
     {
-      "name": "事業",
+      "name": "BUSINESS",
       "url": "/business"
     },
     {
-      "name": "私たちについて",
+      "name": "PROFILE",
       "url": "/profile"
     },
     {
@@ -21,11 +21,11 @@
       "url": "/airdome"
     },
     {
-      "name": "お問い合わせ",
+      "name": "CONTACT",
       "url": "/contact"
     }
   ],
-  "main_cn": [
+  "main_ja": [
     {
       "name": "首页",
       "url": "/"

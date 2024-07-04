@@ -24,10 +24,18 @@ export interface NavigationLink {
 
 const Header = () => {
   // distructuring the main menu from menu object
-  const { main_cn }: { main_cn: NavigationLink[] } = menu;
+  const { main }: { main: NavigationLink[] } = menu;
   const { settings } = config;
   // get current path
   const pathname = usePathname();
+
+  // 言語パスを抽出する関数
+  const getLanguagePath = (path: string) => {
+    const parts = path.split('/');
+    return parts[1] === 'ja' || parts[1] === 'cn' ? `/${parts[1]}` : '';
+  };
+  const languagePath = getLanguagePath(pathname);
+
   const [currentNavItem, setCurrentNavItem] = useState(pathname)
   const handleNavItemClick = (href: string) => {
     setCurrentNavItem(href)
@@ -91,7 +99,7 @@ const Header = () => {
           className="navbar-nav order-3 hidden w-full pb-6 lg:order-1 lg:flex lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8"
           onMouseMove={handleMouseMove}
         >
-          {main_cn.map((menu, i) => (
+          {main.map((menu, i) => (
             <React.Fragment key={`menu-${i}`}>
               {menu.hasChildren ? (
                 <li
@@ -135,9 +143,9 @@ const Header = () => {
                   onClick={() => setIsNavOpen(!isNavOpen)}
                 >
                   <a
-                    href={menu.url}
+                    href={`${languagePath}${menu.url}`}
                     className="relative nav-link block transition"
-                    onClick={() => handleNavItemClick(menu.url)}
+                    onClick={() => handleNavItemClick(`${languagePath}${menu.url}`)}
                   >
                     {menu.name}
                   </a>

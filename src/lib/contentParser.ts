@@ -1,9 +1,9 @@
 import fs from "fs";
 import matter from "gray-matter";
-import { notFound } from "next/navigation";
+import { notFound, usePathname } from "next/navigation";
 import path from "path";
 
-const contentPath = "src/content";
+const baseContentPath = "src/content";
 
 // Helper function to read file content
 const readFile = (filePath: string) => {
@@ -17,7 +17,25 @@ const parseFrontmatter = (frontmatter: any) => {
 };
 
 // get list page data, ex: _index.md
-export const getListPage = (filePath: string) => {
+// export const getListPage = (filePath: string) => {
+//   const pageDataPath = path.join(contentPath, filePath);
+
+//   if (!fs.existsSync(pageDataPath)) {
+//     notFound();
+//   }
+
+//   const pageData = readFile(pageDataPath);
+//   const { content, data: frontmatter } = matter(pageData);
+
+//   return {
+//     frontmatter: parseFrontmatter(frontmatter),
+//     content,
+//   };
+// };
+
+export const getListPage = (filePath: string, lang: string = "default") => {
+  console.log(lang)
+  const contentPath = lang === "default" ? baseContentPath : path.join(baseContentPath, lang);
   const pageDataPath = path.join(contentPath, filePath);
 
   if (!fs.existsSync(pageDataPath)) {
@@ -34,13 +52,51 @@ export const getListPage = (filePath: string) => {
 };
 
 // get all single pages, ex: blog/post.md
-export const getSinglePage = (folder: string) => {
+// export const getSinglePage = (folder: string) => {
+//   const folderPath = path.join(contentPath, folder);
+
+//   if (!fs.existsSync(folderPath) || !fs.lstatSync(folderPath).isDirectory()) {
+//     notFound();
+//   }
+
+//   const filesPath = fs.readdirSync(folderPath);
+//   const sanitizeFiles = filesPath.filter((file) => file.endsWith(".md"));
+//   const filterSingleFiles = sanitizeFiles.filter((file) =>
+//     file.match(/^(?!_)/)
+//   );
+
+//   const singlePages = filterSingleFiles.map((filename) => {
+//     const slug = filename.replace(".md", "");
+//     const filePath = path.join(folderPath, filename);
+//     const pageData = readFile(filePath);
+//     const { content, data: frontmatter } = matter(pageData);
+//     const url = frontmatter.url ? frontmatter.url.replace("/", "") : slug;
+
+//     return {
+//       frontmatter: parseFrontmatter(frontmatter),
+//       slug: url,
+//       content,
+//     };
+//   });
+
+//   const publishedPages = singlePages.filter(
+//     (page) => !page.frontmatter.draft && page
+//   );
+//   const filterByDate = publishedPages.filter(
+//     (page) => new Date(page.frontmatter.date || new Date()) <= new Date()
+//   );
+
+//   return filterByDate;
+// };
+
+export const getSinglePage = (folder: string, lang: string = "default") => {
+  console.log(lang)
+  const contentPath = lang === "default" ? baseContentPath : path.join(baseContentPath, lang);
   const folderPath = path.join(contentPath, folder);
 
   if (!fs.existsSync(folderPath) || !fs.lstatSync(folderPath).isDirectory()) {
     notFound();
   }
-
   const filesPath = fs.readdirSync(folderPath);
   const sanitizeFiles = filesPath.filter((file) => file.endsWith(".md"));
   const filterSingleFiles = sanitizeFiles.filter((file) =>
