@@ -1,7 +1,7 @@
 ---
 # Banner
 banner:
-  title: "Air Dome 引领未来的潮流建筑"
+  title: "Air Dome テキストテキスト"
   content: "「Himalaya」专注于挑战社会难题，构建人类更美好的未来！我们重视对日本社会的贡献，提供创新解决方案，推动向可持续社会的转型。"
   image: "/images/banner.jpg"
   button:
