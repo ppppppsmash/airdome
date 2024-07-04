@@ -7,8 +7,18 @@ import SeoMeta from "@/partials/SeoMeta";
 import { Button, Feature } from "@/types";
 import { FaCheck } from "react-icons/fa/index.js";
 
-const Home = () => {
-  const homepage = getListPage("_index.md");
+interface HomeProps {
+  params: {
+    lang?: string;
+  };
+};
+
+const Home = ({ params }: HomeProps) => {
+  //const homepage = getListPage("_index.md");
+
+  const lang = params.lang || "default";
+  
+  const homepage = getListPage("_index.md", lang);
   const { frontmatter } = homepage;
 
   const {

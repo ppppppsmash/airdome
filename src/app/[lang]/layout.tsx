@@ -12,17 +12,20 @@ import { Suspense } from "react";
 import Loading from '@/components/Loading';
 import DialogParts from '@/components/Dialog';
 
-export default function RootLayout({
-  children
-}: {
+interface LanguageLayoutProps {
   children: React.ReactNode;
-}) {
+  params: {
+    lang?: string;
+  };
+}
+
+export default function RootLayout({ children, params }: LanguageLayoutProps) {
   // import google font css
   const pf = theme.fonts.font_family.primary;
   const sf = theme.fonts.font_family.secondary;
 
   return (
-    <html suppressHydrationWarning={true}>
+    <html suppressHydrationWarning={true} lang={params.lang}>
       <head>
         {/* responsive meta */}
         <meta
