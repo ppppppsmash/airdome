@@ -7,7 +7,20 @@ const nextConfig = {
   reactStrictMode: true,
   basePath: config.base_path !== "/" ? config.base_path : "",
   trailingSlash: config.site.trailing_slash,
-  i18n
+  i18n,
+  trailingSlash: true,
+  async rewrites() {
+    return [
+      {
+        source: '/cn',
+        destination: '/cn/',
+      },
+      {
+        source: '/ja',
+        destination: '/ja/',
+      },
+    ]
+  },
 };
 
 module.exports = nextConfig;
