@@ -7,8 +7,6 @@ import SeoMeta from "@/partials/SeoMeta";
 import { Button, Feature } from "@/types";
 import { FaCheck } from "react-icons/fa/index.js";
 
-import { useRoute } from '../lib/locale';
-
 const Home = () => {
   const homepage = getListPage("_index.md");
   const { frontmatter } = homepage;

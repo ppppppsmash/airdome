@@ -25,32 +25,6 @@
       "url": "/contact"
     }
   ],
-  "main_ja": [
-    {
-      "name": "首页",
-      "url": "/"
-    },
-    {
-      "name": "关于我们",
-      "url": "/about"
-    },
-    {
-      "name": "事业介绍",
-      "url": "/business"
-    },
-    {
-      "name": "会社履历",
-      "url": "/profile"
-    },
-    {
-      "name": "气膜",
-      "url": "/airdome"
-    },
-    {
-      "name": "联系我们",
-      "url": "/contact"
-    }
-  ],
   "footer": [
     {
       "name": "",
