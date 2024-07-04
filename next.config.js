@@ -9,15 +9,23 @@ const nextConfig = {
   trailingSlash: config.site.trailing_slash,
   i18n,
   trailingSlash: true,
+  // async rewrites() {
+  //   return [
+  //     {
+  //       source: '/cn',
+  //       destination: '/cn/',
+  //     },
+  //     {
+  //       source: '/ja',
+  //       destination: '/ja/',
+  //     },
+  //   ]
+  // },
   async rewrites() {
     return [
       {
-        source: '/cn',
-        destination: '/cn/',
-      },
-      {
-        source: '/ja',
-        destination: '/ja/',
+        source: '/:lang(cn|ja)/:path*',
+        destination: '/:lang/:path*',
       },
     ]
   },
