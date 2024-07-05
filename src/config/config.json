@@ -2,7 +2,7 @@
   "site": {
     "title": "Himalaya",
     "base_url": "/",
-    "base_path": "/",
+    "base_path": "/cn",
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
     "logo": "/images/logo.png",

@@ -5,21 +5,9 @@ const { i18n } = require('./next-i18next.config');
 
 const nextConfig = {
   reactStrictMode: false,
-  basePath: config.base_path !== "/" ? config.base_path : "",
+  basePath: config.base_path !== "/cn" ? config.base_path : "",
   trailingSlash: config.site.trailing_slash,
-  i18n,
-  async rewrites() {
-    return [
-      {
-        source: '/cn',
-        destination: '/cn/',
-      },
-      {
-        source: '/ja',
-        destination: '/ja/',
-      },
-    ]
-  },
+  i18n
 };
 
 module.exports = nextConfig;
