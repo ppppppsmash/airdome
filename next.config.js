@@ -8,31 +8,17 @@ const nextConfig = {
   basePath: config.base_path !== "/" ? config.base_path : "",
   trailingSlash: config.site.trailing_slash,
   i18n,
-  // async rewrites() {
-  //   return [
-  //     {
-  //       source: '/cn',
-  //       destination: '/cn/',
-  //     },
-  //     {
-  //       source: '/ja',
-  //       destination: '/ja/',
-  //     },
-  //   ]
-  // },
   async rewrites() {
     return [
       {
-        source: '/:lang(cn|ja)/:path*',
-        destination: '/:lang/:path*',
+        source: '/cn',
+        destination: '/cn/',
+      },
+      {
+        source: '/ja',
+        destination: '/ja/',
       },
     ]
-    // return [
-    //   {
-    //     source: '/',
-    //     destination: '/default',
-    //   },
-    // ];
   },
 };
 
