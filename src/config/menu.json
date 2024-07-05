@@ -1,19 +1,19 @@
 {
   "main": [
     {
-      "name": "HOME",
+      "name": "ホーム",
       "url": "/"
     },
     {
-      "name": "ABOUT",
+      "name": "会社概要",
       "url": "/about"
     },
     {
-      "name": "BUSINESS",
+      "name": "事業",
       "url": "/business"
     },
     {
-      "name": "PROFILE",
+      "name": "私たちについて",
       "url": "/profile"
     },
     {
@@ -21,7 +21,33 @@
       "url": "/airdome"
     },
     {
-      "name": "CONTACT",
+      "name": "お問い合わせ",
+      "url": "/contact"
+    }
+  ],
+  "main_cn": [
+    {
+      "name": "首页",
+      "url": "/"
+    },
+    {
+      "name": "关于我们",
+      "url": "/about"
+    },
+    {
+      "name": "事业介绍",
+      "url": "/business"
+    },
+    {
+      "name": "会社履历",
+      "url": "/profile"
+    },
+    {
+      "name": "气膜",
+      "url": "/airdome"
+    },
+    {
+      "name": "联系我们",
       "url": "/contact"
     }
   ],

@@ -1,14 +1,13 @@
 "use client";
 
-import React, { useState, useCallback, MouseEvent } from "react";
 import Logo from "@/components/Logo";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
-// import TranslateButton from "@/components/TranslateButton";
+import TranslateButton from "@/components/TranslateButton";
 import config from "@/config/config.json";
 import menu from "@/config/menu.json";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion, useMotionTemplate, useMotionValue } from "framer-motion"
+import React, { useState } from "react";
 
 export interface ChildNavigationLink {
   name: string;
@@ -28,27 +27,8 @@ const Header = () => {
   const { settings } = config;
   // get current path
   const pathname = usePathname();
-  const [currentNavItem, setCurrentNavItem] = useState(pathname)
-  const handleNavItemClick = (href: string) => {
-    setCurrentNavItem(href)
-  }
 
-  const [isNavOpen, setIsNavOpen] = useState<boolean>(false);
-
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-  const radius = useMotionValue(0);
-
-  const handleMouseMove = useCallback(
-    ({ clientX, clientY, currentTarget }: MouseEvent) => {
-      const bounds = currentTarget.getBoundingClientRect()
-      mouseX.set(clientX - bounds.left)
-      mouseY.set(clientY - bounds.top)
-      radius.set(Math.sqrt(bounds.width ** 2 + bounds.height ** 2) / 2.5)
-    }, [mouseX, mouseY, radius]
-  );
-
-  const background = useMotionTemplate`radial-gradient(${radius}px circle at ${mouseX}px ${mouseY}px, var(--spotlight-color) 0%, transparent 65%)`
+  const [isNavOpen, setIsNavOpen] = useState<boolean>(false); 
 
   return (
     <header
@@ -89,7 +69,6 @@ const Header = () => {
         <ul
           id="nav-menu"
           className="navbar-nav order-3 hidden w-full pb-6 lg:order-1 lg:flex lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8"
-          onMouseMove={handleMouseMove}
         >
           {main_cn.map((menu, i) => (
             <React.Fragment key={`menu-${i}`}>
@@ -131,29 +110,33 @@ const Header = () => {
                 </li>
               ) : (
                 <li
-                  className="relative nav-item"
+                  className="nav-item"
                   onClick={() => setIsNavOpen(!isNavOpen)}
                 >
                   <a
                     href={menu.url}
-                    className="relative nav-link block transition"
-                    onClick={() => handleNavItemClick(menu.url)}
+                    className={`nav-link block ${
+                      (pathname === `${menu.url}/` || pathname === menu.url) &&
+                      "active border-b-4 border-gray-950 dark:border-white transition-all duration-450"
+                    }`}
+                    style={
+                      (pathname === `${menu.url}/` || pathname === menu.url)
+                        ? {
+                            transition: 'border-width 0.3s ease-in-out',
+                            borderBottomWidth: '4px',
+                          }
+                        : {}
+                    }
                   >
                     {menu.name}
                   </a>
-                  {currentNavItem === menu.url &&
-                    <motion.span
-                      className="absolute active inset-x-1 -bottom-px h-px bg-gradient-to-r border-b-4 border-gray-950 dark:border-white"
-                      layoutId="active-nav-item"
-                    />
-                  }
                 </li>
               )}
             </React.Fragment>
           ))}
         </ul>
         <div className="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
-          {/* <TranslateButton /> */}
+          <TranslateButton />
           <ThemeSwitcher className="mr-5" />
         </div>
       </nav>
