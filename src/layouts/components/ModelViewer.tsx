@@ -1,11 +1,8 @@
 "use client";
+
 import { Canvas, useLoader } from "@react-three/fiber";
 import { Stage, OrbitControls } from "@react-three/drei";
-import { useGLTF } from '@react-three/drei';
 import * as THREE from 'three';
-import { useMemo, useRef, useState } from 'react';
-import { Line, useCursor, MeshDistortMaterial } from '@react-three/drei';
-import { useRouter } from 'next/navigation';
 import { ColladaLoader } from 'three/examples/jsm/loaders/ColladaLoader';
 import { useMediaQuery } from "react-responsive";
 
