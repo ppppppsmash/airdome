@@ -7,13 +7,7 @@ import SeoMeta from "@/partials/SeoMeta";
 import { Button, Feature } from "@/types";
 import { FaCheck } from "react-icons/fa/index.js";
 
-interface HomeProps {
-  params: {
-    lang: string;
-  };
-}
-
-const Home = ({params: { lang }}: HomeProps) => {
+const Home = () => {
   const homepage = getListPage("_index.md");
   const { frontmatter } = homepage;
 
@@ -24,6 +18,8 @@ const Home = ({params: { lang }}: HomeProps) => {
     banner: { title: string; image: string; content?: string; button?: Button };
     features: Feature[];
   } = frontmatter;
+
+
 
   return (
     <>
@@ -46,7 +42,7 @@ const Home = ({params: { lang }}: HomeProps) => {
               )}
             </div>
 
-            {/* <ModelViewer /> */}
+            <ModelViewer />
             {/* <I18n /> */}
           </div>
         </div>

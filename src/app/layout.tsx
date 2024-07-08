@@ -1,3 +1,5 @@
+import {useLocale} from 'next-intl';
+import {notFound} from 'next/navigation';
 import TwSizeIndicator from "@/components/TwSizeIndicator";
 import config from "@/config/config.json";
 import theme from "@/config/theme.json";
@@ -8,29 +10,19 @@ import DelaySection from "@/layouts/components/DelaySection";
 import "@/styles/main.scss";
 import { Suspense } from "react";
 import Loading from '@/components/Loading';
-
-import { dir } from 'i18next';
-import { languages } from '../i18n/settings';
-
-export async function generateStaticParams() {
-  return languages.map((lng) => ({ lng }))
-}
+import DialogParts from '@/components/Dialog';
 
 export default function RootLayout({
-  children,
-  params: {
-    lang
-  }
+  children
 }: {
   children: React.ReactNode;
-  params: any
 }) {
   // import google font css
   const pf = theme.fonts.font_family.primary;
   const sf = theme.fonts.font_family.secondary;
 
   return (
-    <html suppressHydrationWarning={true} lang={lang} dir={dir(lang)}>
+    <html suppressHydrationWarning={true}>
       <head>
         {/* responsive meta */}
         <meta
