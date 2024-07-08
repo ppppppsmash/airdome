@@ -3,7 +3,7 @@
 import React from "react";
 import { HeroParallax } from "../../layouts/components/ui/hero-parallax";
 
-export const products = [
+const products = [
   {
     title: "Moonbeam",
     link: "https://gomoonbeam.com",
