@@ -40,7 +40,7 @@ const Logo = ({ src }: { src?: string }) => {
   const height = isMobile ? "44" : "55";
 
   return (
-    <Link href="/" className="navbar-brand inline-block">
+    <Link href="/cn/" className="navbar-brand inline-block">
 
         <Image
           width={width}

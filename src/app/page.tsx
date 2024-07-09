@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { HoverBorderGradient } from "../layouts/components/ui/hover-border-gradient";
 import { HeroParallax } from "../layouts/components/ui/hero-parallax";
 
 const products = [
@@ -128,7 +129,22 @@ const products = [
 ];
 
 const LandingPage = () => {
-  return <HeroParallax products={products} />;
+  return (
+    <>
+      <div className="mt-8 flex justify-center">
+        <HoverBorderGradient
+          containerClassName="rounded-full"
+          as="button"
+          className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
+        >
+          <a href="/cn">
+            <span>GO TO HOME PAGE</span>
+          </a>
+        </HoverBorderGradient>
+      </div>
+      <HeroParallax products={products} />
+    </>
+  );
 }
 
 export default LandingPage;

@@ -21,8 +21,6 @@ const Home = () => {
     features: Feature[];
   } = frontmatter;
 
-
-
   return (
     <>
       <SeoMeta />

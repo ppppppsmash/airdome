@@ -66,11 +66,11 @@ export default function RootLayout({
         <TwSizeIndicator />
           <Providers>
             <Header />
-              <DelaySection delay={0.2}>
-                <Suspense fallback={<Loading />}>
-                  {children}
-                </Suspense>
-              </DelaySection>
+            <DelaySection delay={0.2}>
+              <Suspense fallback={<Loading />}>
+                {children}
+              </Suspense>
+            </DelaySection>
             <Footer />
           </Providers>
       </body>

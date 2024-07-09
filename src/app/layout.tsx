@@ -1,12 +1,12 @@
 import React from 'react';
 
-import config from "@/config/config.json";
-import theme from "@/config/theme.json";
+import config from "../config/config.json";
+import theme from "../config/theme.json";
 import "@/styles/main.scss";
 
-import Logo from "@/components/Logo";
+import Logo from "../layouts/components/Logo";
 
-export default function RootLayout({
+export default function LandingLayout({
   children
 }: {
   children: React.ReactNode;
@@ -55,15 +55,6 @@ export default function RootLayout({
       </head>
 
       <body>
-      <header
-        className="header z-30"
-      >
-        <nav className="navbar container">
-          <div className="order-0">
-            <Logo />
-          </div>
-        </nav>
-      </header>
         {children}
       </body>
     </html>
