@@ -1,114 +1,134 @@
-import ImageFallback from "@/components/ImageFallback";
-import { ModelViewer } from "@/components/ModelViewer";
-import { getListPage } from "@/lib/contentParser";
-import { markdownify } from "@/lib/utils/textConverter";
-import CallToAction from "@/partials/CallToAction";
-import SeoMeta from "@/partials/SeoMeta";
-import { Button, Feature } from "@/types";
-import { FaCheck } from "react-icons/fa/index.js";
+"use client";
 
-const Home = () => {
-  const homepage = getListPage("_index.md");
-  const { frontmatter } = homepage;
+import React from "react";
+import { HeroParallax } from "../layouts/components/ui/hero-parallax";
 
-  const {
-    banner,
-    features,
-  }: {
-    banner: { title: string; image: string; content?: string; button?: Button };
-    features: Feature[];
-  } = frontmatter;
+const products = [
+  {
+    title: "Air Dome1",
+    link: "",
+    thumbnail:
+      "/images/landing/landing1.png",
+  },
+  {
+    title: "Air Dome2",
+    link: "",
+    thumbnail:
+      "/images/landing/landing2.jpg",
+  },
+  {
+    title: "Air Dome3",
+    link: "",
+    thumbnail:
+      "/images/landing/landing3.jpg",
+  },
 
+  {
+    title: "Air Dome4",
+    link: "",
+    thumbnail:
+      "/images/landing/landing4.jpg",
+  },
+  {
+    title: "Air Dome5",
+    link: "",
+    thumbnail:
+      "/images/landing/landing5.jpg",
+  },
+  {
+    title: "Air Dome6",
+    link: "",
+    thumbnail:
+      "/images/landing/landing6.jpg",
+  },
+  {
+    title: "Air Dome7",
+    link: "",
+    thumbnail:
+      "/images/landing/landing7.jpg",
+  },
+  {
+    title: "Air Dome8",
+    link: "",
+    thumbnail:
+      "/images/landing/landing8.png",
+  },
+  {
+    title: "Air Dome9",
+    link: "",
+    thumbnail:
+      "/images/landing/landing9.jpg",
+  },
+  {
+    title: "Air Dome10",
+    link: "",
+    thumbnail:
+      "/images/landing/landing10.jpg",
+  },
+  {
+    title: "Air Dome11",
+    link: "",
+    thumbnail:
+      "/images/landing/landing11.jpg",
+  },
+  {
+    title: "Air Dome12",
+    link: "",
+    thumbnail:
+      "/images/landing/landing12.jpg",
+  },
+  {
+    title: "Air Dome13",
+    link: "",
+    thumbnail:
+      "/images/landing/landing13.jpg",
+  },
+  {
+    title: "Air Dome14",
+    link: "",
+    thumbnail:
+      "/images/landing/landing14.jpg",
+  },
+  {
+    title: "Air Dome15",
+    link: "",
+    thumbnail:
+      "/images/landing/landing15.jpg",
+  },
+  {
+    title: "Air Dome16",
+    link: "",
+    thumbnail:
+      "/images/landing/landing16.jpg",
+  },
+  {
+    title: "Air Dome17",
+    link: "",
+    thumbnail:
+      "/images/landing/landing17.jpg",
+  },
+  {
+    title: "Air Dome18",
+    link: "",
+    thumbnail:
+      "/images/landing/landing18.jpg",
+  },
+  {
+    title: "Air Dome19",
+    link: "",
+    thumbnail:
+      "/images/landing/landing19.jpg",
+  },
+  {
+    title: "Air Dome20",
+    link: "",
+    thumbnail:
+      "/images/landing/landing20.jpg",
+  }
+];
 
+const LandingPage = () => {
+  return <HeroParallax products={products} />;
+}
 
-  return (
-    <>
-      <SeoMeta />
-      <section className="sm:section pt-14">
-        <div className="container">
-          <div className="row justify-center">
-            <div className="sm:mb-16 text-center lg:col-7">
-              <h1
-                className="mb-4"
-                dangerouslySetInnerHTML={markdownify(banner.title)}
-              />
-              <p
-                dangerouslySetInnerHTML={markdownify(banner.content ?? "")}
-              />
-              {banner.button!.enable && (
-                <a className="btn btn-primary" href={banner.button!.link}>
-                  {banner.button!.label}
-                </a>
-              )}
-            </div>
-
-            <ModelViewer />
-            {/* <I18n /> */}
-          </div>
-        </div>
-      </section>
-
-      {features.map((feature, index: number) => (
-        <section
-          key={index}
-          className={`section-sm ${index % 2 === 0 && "bg-gradient"}`}
-        >
-          <div className="container">
-            <div className="row items-center justify-between">
-              <div
-                className={`mb:md-0 mb-6 md:col-5 ${
-                  index % 2 !== 0 && "md:order-2"
-                }`}
-              >
-                <ImageFallback
-                  src={feature.image}
-                  height={480}
-                  width={520}
-                  alt={feature.title}
-                />
-              </div>
-              <div
-                className={`md:col-7 lg:col-6 ${
-                  index % 2 !== 0 && "md:order-1"
-                }`}
-              >
-                <h2
-                  className="mb-4"
-                  dangerouslySetInnerHTML={markdownify(feature.title)}
-                />
-                <p
-                  className="mb-8 text-lg"
-                  dangerouslySetInnerHTML={markdownify(feature.content)}
-                />
-                {feature.sub_content &&
-                <p
-                  className="mb-2 text-lg"
-                  dangerouslySetInnerHTML={markdownify(feature.sub_content)}
-                />
-                }
-                <ul>
-                  {feature.bulletpoints.map((bullet: string) => (
-                    <li className="relative mb-4 pl-6" key={bullet}>
-                      <FaCheck className={"absolute left-0 top-1.5"} />
-                      <span dangerouslySetInnerHTML={markdownify(bullet)} />
-                    </li>
-                  ))}
-                </ul>
-                {feature.button.enable && (
-                  <a
-                    className="btn btn-primary mt-5"
-                    href={feature.button.link}
-                  >
-                    {feature.button.label}
-                  </a>
-                )}
-              </div>
-            </div>
-          </div>
-        </section>
-      ))}
-    </>
-  );
-};
-
-export default Home;
+export default LandingPage;

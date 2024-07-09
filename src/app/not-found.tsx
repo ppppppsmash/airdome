@@ -1,3 +1,5 @@
+import React from "react";
+
 import ImageFallback from "@/components/ImageFallback";
 import MDXContent from "@/components/MDXContent";
 import { getListPage } from "@/lib/contentParser";

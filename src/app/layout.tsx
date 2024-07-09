@@ -1,16 +1,10 @@
-import {useLocale} from 'next-intl';
-import {notFound} from 'next/navigation';
-import TwSizeIndicator from "@/components/TwSizeIndicator";
+import React from 'react';
+
 import config from "@/config/config.json";
 import theme from "@/config/theme.json";
-import Footer from "@/partials/Footer";
-import Header from "@/partials/Header";
-import Providers from "@/partials/Providers";
-import DelaySection from "@/layouts/components/DelaySection";
 import "@/styles/main.scss";
-import { Suspense } from "react";
-import Loading from '@/components/Loading';
-import DialogParts from '@/components/Dialog';
+
+import Logo from "@/components/Logo";
 
 export default function RootLayout({
   children
@@ -60,17 +54,17 @@ export default function RootLayout({
         />
       </head>
 
-      <body suppressHydrationWarning={true}>
-        <TwSizeIndicator />
-          <Providers>
-            <Header />
-              <DelaySection delay={0.2}>
-                <Suspense fallback={<Loading />}>
-                  {children}
-                </Suspense>
-              </DelaySection>
-            <Footer />
-          </Providers>
+      <body>
+      <header
+        className="header z-30"
+      >
+        <nav className="navbar container">
+          <div className="order-0">
+            <Logo />
+          </div>
+        </nav>
+      </header>
+        {children}
       </body>
     </html>
   );
