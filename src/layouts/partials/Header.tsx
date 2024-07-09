@@ -24,7 +24,7 @@ export interface NavigationLink {
 
 const Header = () => {
   // distructuring the main menu from menu object
-  const { main_cn }: { main_cn: NavigationLink[] } = menu;
+  const { main }: { main: NavigationLink[] } = menu;
   const { settings } = config;
   // get current path
   const pathname = usePathname();
@@ -91,7 +91,7 @@ const Header = () => {
           className="navbar-nav order-3 hidden w-full pb-6 lg:order-1 lg:flex lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8"
           onMouseMove={handleMouseMove}
         >
-          {main_cn.map((menu, i) => (
+          {main.map((menu, i) => (
             <React.Fragment key={`menu-${i}`}>
               {menu.hasChildren ? (
                 <li

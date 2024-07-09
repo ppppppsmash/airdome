@@ -12,7 +12,6 @@ const TranslateButton = () => {
   return (
     <div
       className="mr-5 inline-block border-r border-border pr-5 text-xl text-dark hover:text-primary dark:border-darkmode-border dark:text-white"
-      //href="/cn"
       aria-label="language"
       onClick={() => handleLanguageChange('ja')}
     >

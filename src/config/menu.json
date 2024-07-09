@@ -6,23 +6,23 @@
     },
     {
       "name": "会社概要",
-      "url": "/about"
+      "url": "/cn/about"
     },
     {
       "name": "事業",
-      "url": "/business"
+      "url": "/cn/business"
     },
     {
       "name": "私たちについて",
-      "url": "/profile"
+      "url": "/cn/profile"
     },
     {
       "name": "Air Dome",
-      "url": "/airdome"
+      "url": "/cn/airdome"
     },
     {
       "name": "お問い合わせ",
-      "url": "/contact"
+      "url": "/cn/contact"
     }
   ],
   "main_cn": [
